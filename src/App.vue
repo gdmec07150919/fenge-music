@@ -1,6 +1,15 @@
 <template>
   <div id="app">
-  <mheader></mheader>
+    <link href="https://unpkg.com/animate.css@3.5.1/animate.min.css" rel="stylesheet" type="text/css">
+    <transition 
+    name="mheader-transition"
+    enter-active-class="animated flip"
+    leave-active-class="animated bounceOutRight"
+    >
+    <mheader v-show="showstart" v-on:songSearch="songSearch"></mheader>
+    </transition>
+    <song id="songwrapper" v-if="showsong" :songs="songSearchData"></song>
+    <mcssdog v-if="showdog" id="cssdog" ref="cssdog">{{showdog}}</mcssdog>
   </div>
 </template>
 
@@ -8,12 +17,48 @@
 export default {
   name: 'app',
   components: {
-    hello: require('./components/Hello.vue'),
-    mheader: require('./components/header/header.vue')
+    mheader: require('./components/header/header.vue'),
+    song: require('./components/songs/Song.vue'),
+    mcssdog: require('./components/animate/cssdog.vue')
+  },
+  methods: {
+    songSearch: function (data) {
+      console.log('songSearchApp')
+      this.songSearchData = data
+      if(!this.showsong){
+        this.showsong = true
+      }
+    }
+  },
+  data: function () {
+    return {
+      songSearchData: {},
+      showsong: false,
+      showstart: false,
+      showdog:true
+    }
+  },
+  created: function () {
+    this.$nextTick(function () {
+        var self = this
+        setTimeout(function(){
+          self.showdog = false
+          self.showstart = true
+          document.body.style="background:#fff"
+        },5000)
+    })
   }
 }
 </script>
 
-<style>
-
+<style lang="stylus" rel="stylesheet/stylus">
+  #app{
+    position:relative;
+  }
+  #cssdog{
+    position:absolute;
+    top:200px;
+    left:50%;
+    margin-left:-75px;
+  }
 </style>

@@ -4,8 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import VueResource from 'vue-resource'
 import VueRouter from 'vue-router'
-
+import THREE from 'three'
 import axios from 'axios'
+import './common/index.css'
 Vue.prototype.$http = axios
 
 import {

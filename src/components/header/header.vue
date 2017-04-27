@@ -28,17 +28,45 @@
       search: function () {
         this.$http.get(this.searchUrl).then((res, req) => {
           this.SongArray = res.body.result.songs
-          console.log(this.SongArray)
+          console.log('songArray')
+          console.log(res)
+          var restaurants = []
+          this.SongArray.forEach((v) => {
+            let objSong = {
+              'name': v.name, //歌曲名称
+              'picUrl': v.album.picUrl,//歌手名
+              'popularity': v.popularity,
+              'mp3Url': v.mp3Url,
+              'isplaying': false
+            }
+            restaurants.push(objSong)
+          })
+          this.$emit('songSearch',restaurants)//调用父组件监听的方法
+          restaurants = null
         })
       },
+      resolveReapt: function () {
+          var result = [], hash = {};
+          for (var i = 0, elem; (elem = arr[i]) != null; i++) {
+              if (!hash[elem]) {
+                  result.push(elem);
+                  hash[elem] = true;
+              }
+          }
+          return result;
+      },
+      //搜索网易云服务端的相关歌曲，自动提示歌曲名称
       querySearchAsync: function (queryString, cb) {
-        if (!queryString) {
+     /*   if (!queryString) {
           return
         }
         this.$http.get(this.searchUrl).then((res, req) => {
           this.SongArray = res.body.result.songs
+          console.log('songArray')
+          console.log(this.SongArray)
           var restaurants = []
           this.SongArray.forEach((v) => {
+            console.log(v.name)
             let objSong = {
               'value': v.name
             }
@@ -49,7 +77,7 @@
           this.timeout = setTimeout(() => {
             cb(results)
           }, 3000 * Math.random())
-        })
+        })*/
       },
       handleSelect: function (item) {
         console.log(item)
@@ -64,9 +92,7 @@
       this.$nextTick(
         function () {
           this.$http.get().then((r) => {
-            console.log(r)
-            this.SongResult = r.body.result
-            console.log(this.SongResult)
+           
           })
         }
       )
@@ -81,7 +107,12 @@
 
 <style lang="stylus" rel="stylesheet/stylus">
   #header{
-    width: 300px;
-    margin: 0 auto;
+   display:inline-block;
+   position: absolute;
+   background:#F7BA2A;
+   width:100%;
+   height:100px;
+   text-align:center;
+   line-height:100px;
   }
 </style>
