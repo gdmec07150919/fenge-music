@@ -10,6 +10,7 @@
     </transition>
     <song id="songwrapper" v-if="showsong" :songs="songSearchData"></song>
     <mcssdog v-if="showdog" id="cssdog" ref="cssdog">{{showdog}}</mcssdog>
+    <mfooter></mfooter>
   </div>
 </template>
 
@@ -19,7 +20,8 @@ export default {
   components: {
     mheader: require('./components/header/header.vue'),
     song: require('./components/songs/Song.vue'),
-    mcssdog: require('./components/animate/cssdog.vue')
+    mcssdog: require('./components/animate/cssdog.vue'),
+    mfooter: require('./components/footer/Footer.vue')
   },
   methods: {
     songSearch: function (data) {
