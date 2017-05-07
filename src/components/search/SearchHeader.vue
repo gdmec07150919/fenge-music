@@ -1,5 +1,8 @@
 <template>
   <div id="header">
+    <div class="search-back" >
+       <router-link to="/recommoned" tag="span" class="el-icon-arrow-left"></router-link> <!-- 返回 -->
+    </div> 
     <el-autocomplete
       v-model="keyWord"
       :fetch-suggestions="querySearchAsync"
@@ -7,6 +10,8 @@
       @select="handleSelect"
       ></el-autocomplete>
     <el-button type="primary" icon="search" @click="search">搜索</el-button>
+    
+    <router-view></router-view>
   </div>
 </template>
 
@@ -16,8 +21,8 @@
     data: function () {
       return {
         mSing: Object,
-        keyWord: '烟花易冷',
-        url: '/search?keywords=',
+        keyWord: '六月的雨',
+        url: '/api/search?keywords=',
         state4: '',
         SongArray: [],
         searchMoHu: Array,
@@ -42,6 +47,7 @@
             restaurants.push(objSong)
           })
           this.$emit('songSearch',restaurants)//调用父组件监听的方法
+      //    this.$router.push({name:'songs', params: { songArray: restaurants }})
           restaurants = null
         })
       },
@@ -109,10 +115,21 @@
   #header{
    display:inline-block;
    position: absolute;
-   background:#F7BA2A;
+   top:0px;
    width:100%;
-   height:100px;
+   height:50px;
+   background:#20A0FF;
    text-align:center;
-   line-height:100px;
+   line-height:50px;
+   z-index: 50;
+  }
+  #header > .search-back {
+    display:inline-block;
+    float:left;
+  }
+  #header > div.search-back > span.el-icon-arrow-left {
+    font-size: 18px;
+    color: #fff;
+    margin-left: 10px;
   }
 </style>

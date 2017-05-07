@@ -27,9 +27,10 @@ module.exports = {
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
+    //请求的数据源 -- 跨域请求
     proxyTable: {
       '/api': {
-        target: 'http://localhost:3000',
+        target: 'https://fenge2-huangwufeng.c9users.io',
         changeOrigin: true,
         pathRewrite: {
           '^/api': ''

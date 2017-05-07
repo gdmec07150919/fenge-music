@@ -9,6 +9,10 @@ import axios from 'axios'
 import './common/index.css'
 Vue.prototype.$http = axios
 
+import Vuex from 'vuex'
+
+Vue.use(Vuex)
+
 import {
   Pagination,
   Dialog,
@@ -131,11 +135,19 @@ Vue.use(ColorPicker)
 
 Vue.use(VueRouter)
 Vue.use(VueResource)
-let toGo = {template: '<div>nihao</div>'}
-const Foo = { template: '<div>foo</div>' }
+
+
+var songs = require('./components/songs/Song.vue')
+var recommonedList = require('./components/top-menu/RecommonedList.vue')
+var popularList = resolve => require(['./components/body/PopularList.vue'], resolve)
+var ranking = resolve => require(['./components/top-menu/Ranking.vue'], resolve)
+var search = resolve => require(['./components/search/Search.vue'],resolve)
 const routes = [
-  {path: '/togo', component: toGo},
-  { path: '/foo', component: Foo }
+  {path: '/songs', name: 'songs', component: songs},
+  {path: '/recommoned', name: 'recommoned', component: recommonedList},
+  {path: '/popular', name: 'popular', component: popularList},
+  {path: '/ranking', name: 'ranking', component: ranking},
+  {path: '/search', name: 'search', component: search}
 ]
 const router = new VueRouter({
   routes

@@ -23,11 +23,6 @@ import BScroll from 'better-scroll' //使用BScroll库实现滚动效果
         props:{
             songs:{}
         },
-        watch:{
-            songs: function () {
-              
-            }
-        },
         methods: {
              /* 下载  strRemoteURL:下载的链接地址  strLocalURL：下载之后的本地路径 */
             _downloadSong: function (strRemoteURL,strLocalURL) {
@@ -83,7 +78,7 @@ import BScroll from 'better-scroll' //使用BScroll库实现滚动效果
             /* 音乐播放的开关控制 */
             _playControl: function (songs,song,index,event) {
                 if(!event._constructed){
-                //防止 触发两次
+                //防止 触发2次
                     return
                 }
                 /* 如果点击这首歌曲时 正在播放， 设置为暂停状态 */ 
@@ -115,7 +110,8 @@ import BScroll from 'better-scroll' //使用BScroll库实现滚动效果
         data: function () {
           return {
               maudio: null,
-              songwrapperScroll: null
+              songwrapperScroll: null,
+              songss: Object
           }  
         },
         created: function () {
@@ -123,7 +119,16 @@ import BScroll from 'better-scroll' //使用BScroll库实现滚动效果
               console.log('bsc')
             this._initBScroll()
           })
+        },
+        watch: {
+        '$route' (to, from) {
+            console.log('to')
+            console.log(to)
+            console.log('from')
+            console.log(from)
+            this.songss = to
         }
+      }
     }
 </script>
 

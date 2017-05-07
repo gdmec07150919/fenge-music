@@ -12,8 +12,11 @@
 
 <style lang="stylus" rel="stylesheet/stylus">
     #Mfooter {
-        position:absolute;
-        top:100%;
-        margin-top:-50px;
+      position:fixed;
+      bottom:0px;
+      left:0px;
+      height:80px;
+      width:100%;
+      background:red;
     }
 </style>
