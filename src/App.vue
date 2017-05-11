@@ -11,19 +11,22 @@
    <song id="songwrapper" v-if="showsong" :songs="songSearchData"></song>
     <mcssdog v-if="showdog" id="cssdog" ref="cssdog">{{showdog}}</mcssdog>
     <mfooter></mfooter>-->
-    <div id="app-header">
+    <!-- 这是一个flash动画 -->
+    <mcssdog v-if="!showdog" id="cssdog" ref="cssdog">{{showdog}}</mcssdog>
+   
+    <div v-if="showdog" id="app-header">
       <start-header></start-header>
     </div>
-    <carousel class="app-carousel"></carousel>
-    <div id="app-menu-body">
+    <carousel v-if="showdog" class="app-carousel"></carousel>
+    <div v-if="showdog" id="app-menu-body">
         <menu-body></menu-body>
     </div>
-    <div id="app-scroll">
+    <div v-if="showdog" id="app-scroll">
       <keep-alive>
          <router-view></router-view>
       </keep-alive>
     </div>
-    <mfooter></mfooter>
+    <mfooter v-if="showdog"></mfooter>
   </div>
 </template>
 
@@ -52,7 +55,7 @@ export default {
       songSearchData: {},
       showsong: false,
       showstart: false,
-      showdog:true
+      showdog:false
     }
   },
   created: function () {
@@ -62,7 +65,7 @@ export default {
         var self = this
         //将启动动画 隐藏
         setTimeout(function(){
-          self.showdog = false
+          self.showdog = true
           self.showstart = true
           document.body.style="background:#fff"
         },5000)
