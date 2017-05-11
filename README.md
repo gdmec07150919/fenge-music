@@ -1,13 +1,14 @@
 # fenge-music
 
 > A Vue.js project
-
+项目地址:http://139.199.219.208:8080
 ## Build Setup
 
 ``` bash
 # install dependencies
 npm install
-
+#必须按照 loader
+npm install stylus stylus-loader style-loader --save-dev
 # serve with hot reload at localhost:8080
 npm run dev
 
