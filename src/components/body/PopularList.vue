@@ -20,12 +20,11 @@ export default {
     beforeCreate: function () {
         console.log('beforecreate')
         this.$http.get('/api/top/playlist?limit=30').then((val) => {
-                   console.log('popular')
-                   console.log(val.body.playlists)
                    this.popularData = val.body.playlists
                },(error) => {
                    console.log(error)
         })
+      
     },
    data () {
      return {

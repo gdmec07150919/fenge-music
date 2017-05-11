@@ -18,10 +18,10 @@
          </span>
         </transition>
          <div class="play-wrapper">         
-             <span @click="_play" class="fa-step-backward my-icon-play"></span>  <!-- 后退 -->
+             <span @click="toPrevious" class="fa-step-backward my-icon-play"></span>  <!-- 上一曲 -->
              <span v-if="isPlay" @click="_pause" class="fa-pause-circle my-icon-play"></span> <!-- 播放状态 -->
              <span v-if="!isPlay" @click="_play" class="fa-play-circle-o my-icon-play"></span>  <!-- 暂停状态 -->
-             <span @click="_pause" class="fa-step-forward my-icon-play"></span> <!-- 前进 -->
+             <span @click="toNext" class="fa-step-forward my-icon-play"></span> <!-- 下一曲 -->
          </div>
         <audio ref="refMp3s">
             <source type="audio/mp3">
@@ -49,6 +49,28 @@
                 console.log(this.$store.state.isPlay)
                 this.$store.commit('modifyToPause')
                 this.maudio.pause()
+            },
+            toNext: function () {
+                this.$store.commit('nextSong')
+                this.$store.commit('modifyToPlay')
+                this.commonPlay()
+                
+            },
+            toPrevious: function () {
+                this.$store.commit('previousSong')
+               this.$store.commit('modifyToPlay')
+               this.commonPlay()
+            },
+            commonPlay: function () {
+                /* 播放歌曲 */
+                if(this.maudio != null && this.$store.state.isPlay)
+                {
+                    this.maudio.pause()
+                }
+                 this.maudio = this.$refs.refMp3s
+                 this.maudio.src = this._playingSong.mp3Url
+                 this.maudio.play()
+                 console.log(this._playingSong)
             }
         },
         computed: {
@@ -79,11 +101,14 @@
         float:left;
         margin-left: 40px;
         background:#ccc;
-        width: 60px;
+        width: 20%;
         height: 60px;
-        border-radius: 30px;
+        border-radius: 100px;
     }
     .footer-song-name {
+        display: inline-block;
+        width: 20%;
+        overflow: hidden;
         margin-left: 5px;
         color:#ff0;
     }
@@ -102,7 +127,7 @@
       margin-left: 5px;
     }
     .footer-circle-img {
-        width:60px;
+        width: 100%;
         height:60px;
         border-radius: 30px;
     }

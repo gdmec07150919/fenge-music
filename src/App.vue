@@ -69,6 +69,26 @@ export default {
         //激活推荐歌单路由
         
     })
+      
+   //获取纯音乐 填充播放列表
+          this.$http.get('/api/search?keywords=纯音乐').then((val) => {
+                   console.log(val.body.result.songs)
+                    var restaurants = []
+                     val.body.result.songs.forEach((v) => {
+                        let objSong = {
+                          'name': v.name, //歌曲名称
+                          'picUrl': v.album.picUrl,//歌手名
+                          'popularity': v.popularity,
+                          'mp3Url': v.mp3Url,
+                          'isplaying': false
+                        }
+                        restaurants.push(objSong)
+                      })
+                   this.$store.commit('setPlayList',restaurants)
+                   this.$store.commit('setPlaySong', 0)
+               },(error) => {
+                   console.log(error)
+        })
   }
 }
 </script>
