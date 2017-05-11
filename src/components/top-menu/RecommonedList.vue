@@ -35,13 +35,15 @@
     .recommoned-wrapper {
         width:360px; 
         display:flex;
+        max-height: 640px;
         flex-flow: row wrap;
+        margin: 0 auto;
         justify-content: space-around;
 
     }
     .recommoned-wrapper .recommoned {
         width: 28%;
-        margin: 5px;
+        margin: 7px;
     }
     .recommoned-wrapper  .text-wrapper {
         width:100px;

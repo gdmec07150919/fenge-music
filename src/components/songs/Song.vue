@@ -87,6 +87,7 @@ import BScroll from 'better-scroll' //使用BScroll库实现滚动效果
                      console.log('pause')
                      song.isplaying = false
                      this.maudio = null
+                     this.$store.commit('modifyToPause')
                      return
                 }
                   /* 如果点击播放这首歌曲，其它歌曲正在播放，需要将其它歌曲的 icon 设置为暂停状态 */
@@ -102,6 +103,9 @@ import BScroll from 'better-scroll' //使用BScroll库实现滚动效果
                 console.log('play')
                 this.maudio.play()
                 song.isplaying = true
+                //改变 store 
+                this.$store.commit('setPlaySong',index)
+                this.$store.commit('modifyToPlay')
             },
             _downloading: function(){
                 
@@ -142,7 +146,6 @@ import BScroll from 'better-scroll' //使用BScroll库实现滚动效果
      position:absolute;
      width:250px;
      height:400px;
-     top:100px;
      left:50%;
      margin-left:-130px;
      overflow:hidden;

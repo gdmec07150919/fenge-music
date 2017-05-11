@@ -12,6 +12,7 @@ Vue.prototype.$http = axios
 import Vuex from 'vuex'
 
 Vue.use(Vuex)
+var {store} = require('@/../vuex-store/store.js')
 
 import {
   Pagination,
@@ -158,6 +159,7 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   template: '<App/>',
   components: { App }

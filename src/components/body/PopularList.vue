@@ -4,7 +4,7 @@
     <div class="popular-inner">
     <ul>
      <li class="popular" v-for="playlist in popularData" :key="playlist.id">
-            <img :src="playlist.coverImgUrl" style="width:100px"/>
+            <img :src="playlist.coverImgUrl" style="width:100px;height:100px;"/>
             <div class="text-wrapper">
                 <h3>{{playlist.name}}</h3>
             </div>
@@ -46,7 +46,10 @@ export default {
    },
    created: function() {
        this.$nextTick(function () {
-          this._initBScroll()
+          let self = this
+          setTimeout(function () {
+              self._initBScroll()
+          },100)
        })
 
    }
@@ -56,8 +59,9 @@ export default {
 <style  lang="stylus"  rel="stylesheet/stylus" >
     .populars-wrapper {
         width:360px;
-        height:300px;
+        margin: 0 auto;
         overflow:hidden;
+        max-height: 640px;
     }
 
     .popular-inner {
@@ -65,14 +69,14 @@ export default {
     }
     .popular-inner > ul {
         width:100%;
-        height:1495px;
+        height:1630px;
         display:flex;
         flex-flow: row wrap;
         justify-content: space-around;
     }
     .populars-wrapper  .popular {
         width: 28%;
-        margin: 5px;
+        margin: 10px 5px 5px 5px;
     }
     .populars-wrapper   .text-wrapper {
         width:100px;

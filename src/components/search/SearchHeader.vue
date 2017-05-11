@@ -4,7 +4,7 @@
        <router-link to="/recommoned" tag="span" class="el-icon-arrow-left"></router-link> <!-- 返回 -->
     </div> 
     <el-autocomplete
-      v-model="keyWord"
+      v-model="searchSuggest"
       :fetch-suggestions="querySearchAsync"
       placeholder="请输入内容"
       @select="handleSelect"
@@ -18,6 +18,7 @@
 <script type="text/ecmascript-6">
   export default{
     name: 'header',
+    props: ['searchSuggest'], //搜索建议
     data: function () {
       return {
         mSing: Object,
@@ -31,6 +32,7 @@
     },
     methods: {
       search: function () {
+        console.log('cccc')
         this.$http.get(this.searchUrl).then((res, req) => {
           this.SongArray = res.body.result.songs
           console.log('songArray')
@@ -48,6 +50,7 @@
           })
           this.$emit('songSearch',restaurants)//调用父组件监听的方法
       //    this.$router.push({name:'songs', params: { songArray: restaurants }})
+          this.$store.commit('setPlayList',restaurants) //改变状态管理 
           restaurants = null
         })
       },
@@ -105,7 +108,7 @@
     },
     computed: {
       searchUrl: function () {
-        return this.url + this.keyWord
+        return this.url + this.searchSuggest
       }
     }
   }

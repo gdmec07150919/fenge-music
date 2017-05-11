@@ -45,10 +45,10 @@ console.log(rankingList)
         left: 0px;
         top: 50px;
         width:100%;
-        height:100%;
+        height: 640px;
         background:rgba(33,33,33,0.1);
         overflow:hidden;
-        z-index:50;
+        z-index:54;
     }
     .ranking > div {
         height:1100px;

@@ -11,13 +11,19 @@
    <song id="songwrapper" v-if="showsong" :songs="songSearchData"></song>
     <mcssdog v-if="showdog" id="cssdog" ref="cssdog">{{showdog}}</mcssdog>
     <mfooter></mfooter>-->
-    
-    <start-header></start-header>
+    <div id="app-header">
+      <start-header></start-header>
+    </div>
     <carousel class="app-carousel"></carousel>
-    <menu-body></menu-body>
+    <div id="app-menu-body">
+        <menu-body></menu-body>
+    </div>
+    <div id="app-scroll">
       <keep-alive>
          <router-view></router-view>
       </keep-alive>
+    </div>
+    <mfooter></mfooter>
   </div>
 </template>
 
@@ -25,9 +31,9 @@
 export default {
   name: 'app',
   components: {
-    song: require('./components/songs/Song.vue'),
-    mcssdog: require('./components/animate/cssdog.vue'),
-    mfooter: require('./components/footer/Footer.vue'),
+    song: require('@/components/songs/Song.vue'),
+    mcssdog: require('@/components/animate/cssdog.vue'),
+    mfooter: require('@/components/footer/Footer.vue'),
     startHeader: require('@/components/header/startHeader.vue'),
     Carousel: require('@/components/songs/carousel.vue'),
     menuBody: require('@/components/body/MenuBody.vue')
@@ -51,7 +57,7 @@ export default {
   },
   created: function () {
     //激活路由 popular
-    this.$router.push('/popular')
+    this.$router.push('/search')
     this.$nextTick(function () {
         var self = this
         //将启动动画 隐藏
@@ -68,11 +74,22 @@ export default {
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
+  body,html {
+    height:100%;
+  }
   #app{
-    position:relative;
-    max-width:360px;
-    min-height:640px;
+    position:flex;
+    min-width:360px;
+    height:100%;
     margin:0 auto;
+    flex-direction: column;
+  }
+  #app-menu-body {
+    height: 50px;
+  }
+  #app-scroll {
+    flex: 1;
+    overflow:hidden;
   }
   #cssdog{
     position:absolute;

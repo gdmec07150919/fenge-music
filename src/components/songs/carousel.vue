@@ -2,7 +2,7 @@
     <div id="carousel-wrapper">
          <el-carousel :interval="2000" type="card" height="100px">
              <el-carousel-item  v-for="(data,index) in datasArr" :key="index" class="carousel-imgitem">
-                 <span id="carousel-imgwrapper"><img :src="data.sPicUrl"></img></span>
+                <img :src="data.pic"></img>
              </el-carousel-item>
          </el-carousel>
      </div>
@@ -19,8 +19,8 @@
        },
        created () {
           this.$nextTick(function () {
-             this.$http.get('/api//personalized/privatecontent').then( (val) => {
-                 let result = val.body.result
+             this.$http.get('/api/banner').then( (val) => {
+                 let result = val.body.banners
                  console.log(result)
                  this.datasArr = result
                  
@@ -33,7 +33,7 @@
 <style  lang="stylus"  rel="stylesheet/stylus" >
     #carousel-wrapper {
         max-width:360px;
-        margin:5px auto;
+        margin:5px auto 0 auto;
         padding:0 10px 0 10px;
     }
     .el-carousel__item > span {
@@ -46,6 +46,14 @@
   }
    .el-carousel__item > span > img {
         width:200px;
+        
+   }
+   #carousel-imgwrapper {
+       text-align:center;
+   }
+  .el-carousel__item > img {
+        width:180px;
+        height:100px
         
    }
 </style>
