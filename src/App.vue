@@ -101,11 +101,13 @@ export default {
     height:100%;
   }
   #app{
-    position:flex;
+    position:relative;
+    display: flex;
     min-width:360px;
     height:100%;
     margin:0 auto;
     flex-direction: column;
+    overflow:hidden;
   }
   #app-menu-body {
     height: 50px;

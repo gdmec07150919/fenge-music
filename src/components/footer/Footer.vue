@@ -101,7 +101,7 @@
         float:left;
         margin-left: 40px;
         background:#ccc;
-        width: 20%;
+        width: 60px;
         height: 60px;
         border-radius: 100px;
     }
@@ -127,7 +127,7 @@
       margin-left: 5px;
     }
     .footer-circle-img {
-        width: 100%;
+        width: 60px;
         height:60px;
         border-radius: 30px;
     }
