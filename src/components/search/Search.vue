@@ -1,17 +1,17 @@
 <template>
     <div id="search">
-        <search-header  v-on:songSearch="songSearch" :searchSuggest="searchSuggestToSon"></search-header>
-        <!-- 搜索建议 -->
-        <div class="search-body">
-            <div class="search-suggest-wrapper" v-if="!showsong">
-                <h3>&nbsp&nbsp&nbsp热门搜索</h3>
-                <div class="search-suggest">
-                    <el-button size="small" v-for="(item,$index) in searchSuggest" :key="item"  @click="fillSuggest($index)">{{item}}</el-button>
+            <search-header  v-on:songSearch="songSearch" :searchSuggest="searchSuggestToSon" :key="1"></search-header>
+            <!-- 搜索建议 -->
+            <div class="search-body" :key="2">
+                <div class="search-suggest-wrapper" v-if="!showsong">
+                    <h3>&nbsp&nbsp&nbsp热门搜索</h3>
+                    <div class="search-suggest">
+                        <el-button size="small" v-for="(item,$index) in searchSuggest" :key="item"  @click="fillSuggest($index)">{{item}}</el-button>
+                    </div>
                 </div>
+                
+                <songs v-if="showsong" :songs="songSearchData"></songs>
             </div>
-            
-            <songs v-if="showsong" :songs="songSearchData"></songs>
-        </div>
     </div>
 </template>
 
@@ -51,6 +51,7 @@
 </script>
 
 <style rel="stylesheet/stylus" lang="stylus" scoped>
+@import '../../../node_modules/animate.css';
    .search-body {
         position: absolute;
         top: 50px;

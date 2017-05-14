@@ -15,13 +15,12 @@
         </ul>
     </div>
     </div>
-       
+
 </template>
 <script type="text/ecmascript-6">
 import BScroll from 'better-scroll' //使用BScroll库实现滚动效果
    export default {
         props:{
-            songs:{}
         },
         methods: {
              /* 下载  strRemoteURL:下载的链接地址  strLocalURL：下载之后的本地路径 */
@@ -29,24 +28,24 @@ import BScroll from 'better-scroll' //使用BScroll库实现滚动效果
                 let reg = /^http:\/\//
                 strRemoteURL = strRemoteURL.replace(reg,"https://")
                 var xmlHTTP = null
-                try { 
-                  xmlHTTP = new ActiveXObject("Msxml2.XMLHTTP"); 
-                } catch (trymicrosoft) { 
-                    try { 
-                       xmlHTTP = new XMLHttpRequest(); 
-                    } catch (othermicrosoft) { 
-                        try { 
-                            xmlHTTP = new ActiveXObject("Microsoft.XMLHTTP"); 
-                            } catch (failed) { 
-                            xmlHTTP = false; 
-                        } 
-                    } 
+                try {
+                  xmlHTTP = new ActiveXObject("Msxml2.XMLHTTP");
+                } catch (trymicrosoft) {
+                    try {
+                       xmlHTTP = new XMLHttpRequest();
+                    } catch (othermicrosoft) {
+                        try {
+                            xmlHTTP = new ActiveXObject("Microsoft.XMLHTTP");
+                            } catch (failed) {
+                            xmlHTTP = false;
+                        }
+                    }
                 }
-                
+
                     xmlHTTP.open("Get", strRemoteURL, false);
                     xmlHTTP.send();
                     var adodbStream = new ActiveXObject("ADODB.Stream");
-                    adodbStream.Type = 1;//1=adTypeBinary 
+                    adodbStream.Type = 1;//1=adTypeBinary
                     adodbStream.Open();
                     adodbStream.write(xmlHTTP.responseBody);
                     adodbStream.SaveToFile(strLocalURL, 2);
@@ -63,17 +62,6 @@ import BScroll from 'better-scroll' //使用BScroll库实现滚动效果
             },
             _mp3Player: function (e) {
                 console.log(e)
-             /*  console.log('play')
-                if(this.maudio != null){ 
-                    this.maudio.pause()
-                    songs.forEach(function(e) {
-                    e.isplaying = false
-                })
-                }
-                this.maudio = this.$refs.refMp3s[index]
-                this.maudio.src = song.mp3Url
-                this.maudio.play()
-                song.isplaying = true*/
             },
             /* 音乐播放的开关控制 */
             _playControl: function (songs,song,index,event) {
@@ -81,7 +69,7 @@ import BScroll from 'better-scroll' //使用BScroll库实现滚动效果
                 //防止 触发2次
                     return
                 }
-                /* 如果点击这首歌曲时 正在播放， 设置为暂停状态 */ 
+                /* 如果点击这首歌曲时 正在播放， 设置为暂停状态 */
                 if(this.maudio != null && song.isplaying){
                      this.maudio.pause()
                      console.log('pause')
@@ -103,20 +91,20 @@ import BScroll from 'better-scroll' //使用BScroll库实现滚动效果
                 console.log('play')
                 this.maudio.play()
                 song.isplaying = true
-                //改变 store 
+                //改变 store
                 this.$store.commit('setPlaySong',index)
                 this.$store.commit('modifyToPlay')
             },
             _downloading: function(){
-                
-            } 
+
+            }
         },
         data: function () {
           return {
               maudio: null,
               songwrapperScroll: null,
               songss: Object
-          }  
+          }
         },
         created: function () {
           this.$nextTick(function () {
@@ -132,23 +120,23 @@ import BScroll from 'better-scroll' //使用BScroll库实现滚动效果
             console.log(from)
             this.songss = to
         }
+      },
+      computed: {
+        songs: function () {
+          return this.$store.state.playList
+        }
       }
     }
 </script>
 
-<style lang="stylus" rel="stylesheet/stylus">
+<style lang="stylus" rel="stylesheet/stylus" scoped>
 @import "../../../node_modules/hover.css/css/hover.css";
 @import "../../common/css/fontello.css";
     a {
         background:black;
     }
-    .songs-wrapper{
-     position:absolute;
-     width:250px;
-     height:400px;
-     left:50%;
-     margin-left:-130px;
-     overflow:hidden;
+    .song-wrapper>ul>li {
+      text-align: center;
     }
     .song {
     font-size:14px;
@@ -156,6 +144,7 @@ import BScroll from 'better-scroll' //使用BScroll库实现滚动效果
     line-height:60px;
     padding:5px;
     text-align:left;
+    border-bottom: 1px solid #ccc;
     }
     .songimg{
         display:inline-block;

@@ -9,7 +9,7 @@
              <img class="footer-circle-img" :src="_playingSong.picUrl">
          </div>
          </transition>
-         <transition 
+         <transition
            enter-active-class="animated fadeIn"
            leave-active-class="animate fadeOut"
          >
@@ -17,7 +17,7 @@
              {{ _playingSong.name }}
          </span>
         </transition>
-         <div class="play-wrapper">         
+         <div class="play-wrapper">
              <span @click="toPrevious" class="fa-step-backward my-icon-play"></span>  <!-- 上一曲 -->
              <span v-if="isPlay" @click="_pause" class="fa-pause-circle my-icon-play"></span> <!-- 播放状态 -->
              <span v-if="!isPlay" @click="_play" class="fa-play-circle-o my-icon-play"></span>  <!-- 暂停状态 -->
@@ -54,7 +54,7 @@
                 this.$store.commit('nextSong')
                 this.$store.commit('modifyToPlay')
                 this.commonPlay()
-                
+
             },
             toPrevious: function () {
                 this.$store.commit('previousSong')
@@ -88,9 +88,6 @@
 @import '../../common/lyicon/css/lyicon.css';
 @import '../../../node_modules/animate.css';
     #Mfooter {
-      position: absolute;
-      bottom:0px;
-      left:0px;
       height:60px;
       line-height:60px;
       width:100%;

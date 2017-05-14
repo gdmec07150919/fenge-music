@@ -1,8 +1,8 @@
 <template>
-  <div id="header">
-    <div class="search-back" >
-       <router-link to="/recommoned" tag="span" class="el-icon-arrow-left"></router-link> <!-- 返回 -->
-    </div> 
+  <div class="header">
+   <div class="search-back" @click="showHeader">
+       <router-link to="/home/popular" tag="span" class="el-icon-arrow-left"></router-link>
+    </div>
     <el-autocomplete
       v-model="searchSuggest"
       :fetch-suggestions="querySearchAsync"
@@ -10,7 +10,7 @@
       @select="handleSelect"
       ></el-autocomplete>
     <el-button type="primary" icon="search" @click="search">搜索</el-button>
-    
+
     <router-view></router-view>
   </div>
 </template>
@@ -50,7 +50,7 @@
           })
           this.$emit('songSearch',restaurants)//调用父组件监听的方法
       //    this.$router.push({name:'songs', params: { songArray: restaurants }})
-          this.$store.commit('setPlayList',restaurants) //改变状态管理 
+          this.$store.commit('setPlayList',restaurants) //改变状态管理
           restaurants = null
         })
       },
@@ -95,13 +95,16 @@
         return (state) => {
           return (state.value.indexOf(queryString.toLowerCase()) === 0)
         }
+      },
+      showHeader: function () {
+          this.$store.commit('setShowHeader',true)
       }
     },
     created: function () {
       this.$nextTick(
         function () {
           this.$http.get().then((r) => {
-           
+
           })
         }
       )
@@ -115,22 +118,22 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  #header{
-   display:inline-block;
-   position: absolute;
-   top:0px;
-   width:100%;
-   height:50px;
+@import "../../common/stylus/mixin.styl";
+  .header{
+   display:flex;
+   flex-direction: row;
+   justify-content: space-between;
+   rem-height(50);
+   width: 100%;
    background:#20A0FF;
-   text-align:center;
    line-height:50px;
    z-index: 50;
   }
-  #header > .search-back {
+  .header > .search-back {
     display:inline-block;
-    float:left;
+
   }
-  #header > div.search-back > span.el-icon-arrow-left {
+  .header > div.search-back > span.el-icon-arrow-left {
     font-size: 18px;
     color: #fff;
     margin-left: 10px;

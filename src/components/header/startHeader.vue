@@ -1,12 +1,12 @@
 <template>
     <div id="start-header">
-        <div class="icon-align-justify"></div>
+        <div class="app-header-menu fa-reorder" @click.stop="showMenuLeft"></div>
         <div class="font-wrapper">
-            <router-link tag = "span" to="recommoned" class="music-recommoned" >推荐</router-link>
-            <router-link tag = "span" to="ranking"  class="music-ranking-list">排行榜</router-link>
+            <router-link tag = "span" :to="{name: 'home'}" class="music-recommoned" >主页</router-link>
+            <router-link tag = "span" :to="{name: 'ranking'}"  class="music-ranking-list">排行榜</router-link>
             <router-link tag = "span" to="personal"  class="music-personal">个人</router-link>
         </div>
-        <div class="search-wrapper"><router-link tag="span" to="search" class="el-icon-search"></router-link></div>
+        <div class="search-wrapper"  @click="hiddeHeader"><router-link tag="span" :to="{name:'search'}" class="fa-search"></router-link></div>
     </div>
 </template>
 
@@ -21,23 +21,30 @@
             },
             clinkPersonal: function () {
                 this.$router.push('/personal')
+            },
+            showMenuLeft: function () {
+                this.$emit('hiddeMenuLeft')
+            },
+            hiddeHeader: function () {
+              this.$store.commit('setShowHeader',false)
             }
         }
     }
 </script>
 
 <style  lang="stylus"  rel="stylesheet/stylus" >
+@import url('../../common/stylus/mixin.styl');
 #start-header{
     display:inline-block;
     width:100%;
-    height:50px;
     background:#20A0FF;
     color:#E5E9F2;
     font-size:36px;
   }
-.icon-align-justify {
+.app-header-menu {
     display:inline-block;
     color:#F9FAFC;
+    margin-left:5px;
 }
 .font-wrapper{
     display:inline-block;
@@ -63,7 +70,7 @@
 .start-header > .search-wrapper > .el-icon-search {
     display:inline-block;
     color:#F9FAFC;
-    line-height: 50px;   
+    line-height: 50px;
 }
 
 

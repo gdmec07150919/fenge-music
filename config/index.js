@@ -30,7 +30,7 @@ module.exports = {
     //请求的数据源 -- 跨域请求
     proxyTable: {
       '/api': {
-        target: 'https://fenge2-huangwufeng.c9users.io',
+        target: 'http://huangwufeng.cn:3000/',
         changeOrigin: true,
         pathRewrite: {
           '^/api': ''

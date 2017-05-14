@@ -1,0 +1,25 @@
+<template>
+    <v-carousel></v-carousel>
+</template>
+
+<script type="text/ecmascript-6">
+import carousel from '@/components/songs/carousel.vue';
+import carousel from '@/components/songs/carousel.vue';
+import carousel from '@/components/songs/carousel.vue';
+import carousel from '@/components/songs/carousel.vue';
+
+    export default {
+        data: function () {
+            return {
+                
+            }
+        },
+        components: {
+            'f-carousel': carousel
+        }
+    }
+</script>
+
+<style rel="stylesheet/stylus" lang="stylus" scoped>
+    
+</style>

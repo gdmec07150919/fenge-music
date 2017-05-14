@@ -7,8 +7,9 @@ import VueRouter from 'vue-router'
 import THREE from 'three'
 import axios from 'axios'
 import './common/index.css'
+import '../config/fine.css.js'
 Vue.prototype.$http = axios
-
+console.log(devicePixelRatio)
 import Vuex from 'vuex'
 
 Vue.use(Vuex)
@@ -140,15 +141,35 @@ Vue.use(VueResource)
 
 var songs = require('./components/songs/Song.vue')
 var recommonedList = require('./components/top-menu/RecommonedList.vue')
-var popularList = resolve => require(['./components/body/PopularList.vue'], resolve)
-var ranking = resolve => require(['./components/top-menu/Ranking.vue'], resolve)
-var search = resolve => require(['./components/search/Search.vue'],resolve)
+var popularList = require('./components/body/PopularList.vue')
+var radio = require('./components/body/Radio.vue')
+var ranking = resolve => require(['@/allPs/Ranking.vue'], resolve)
+//var search = resolve => require(['@/allPs/Search.vue'],resolve)
+var home = require('@/allPs/Home.vue')
+var search = require('@/allPs/Search.vue')
 const routes = [
-  {path: '/songs', name: 'songs', component: songs},
-  {path: '/recommoned', name: 'recommoned', component: recommonedList},
-  {path: '/popular', name: 'popular', component: popularList},
+  {path: '/home', name: 'home', component: home,
+        children: [{
+          path: 'popular',
+          name: 'popular',
+          component: popularList,
+          props: true
+        },
+        {
+          path: 'radio',
+          name: 'radio',
+          component: radio,
+          props: true
+        },
+        {
+          path: 'popular',
+          name: 'popular',
+          component: popularList,
+          props: true
+        }]
+  },
   {path: '/ranking', name: 'ranking', component: ranking},
-  {path: '/search', name: 'search', component: search}
+  {path: '/search', name: 'search', component: search},
 ]
 const router = new VueRouter({
   routes

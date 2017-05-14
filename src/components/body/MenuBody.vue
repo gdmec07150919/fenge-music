@@ -1,9 +1,11 @@
 <template>
-    <div id="menu-body">
-<!--        <router-link tag = "span" to="recommoned" class="music-absolute">纯音乐</router-link>-->
-        <router-link tag = "span" to="popular" class="music-popular">流行</router-link> <!-- Nodejs网易云api: 网友精选碟 (歌单) -->
-        <router-link tag = "span" to="allusion" class="music-allusion">古典</router-link>
-        <router-link tag = "span" to="radio" class="music-radio">电台</router-link>
+    <div id="menu-body-wrapper">
+         <div id="menu-body">
+            <router-link tag = "span" to="/home/popular" class="music-popular">流行</router-link> <!-- Nodejs网易云api: 网友精选碟 (歌单) -->
+            <router-link tag = "span" to="/popular" class="music-absolute">纯音乐</router-link>
+            <router-link tag = "span" to="allusion" class="music-allusion">古典</router-link>
+            <router-link tag = "span" to="radio" class="music-radio">电台</router-link>
+        </div>
     </div>
 </template>
 
@@ -14,20 +16,24 @@
                 this.$router.push('/recommoned')
             },
             clickPopular: function () {
-                this.$router.push('/popular')    
+                this.$router.push('/popular')
             },
             clickAllusion: function () {
-                this.$router.push('/popular')    
+                this.$router.push('/popular')
             },
             clickRadio: function () {
-                this.$router.push('/popular')    
+                this.$router.push('/popular')
             }
-            
+
         }
     }
 </script>
 
 <style  lang="stylus"  rel="stylesheet/stylus" >
+  #menu-body-wrapper{
+    display: flex;
+    flex-direction: column;
+  }
 #menu-body{
     display: flex;
     flex-direction: row;
@@ -36,6 +42,10 @@
     font-size: 18px;
     height:50px;
     align-items: center;
+}
+#menu-body>.router-songlist{
+    flex:1;
+    width: 100%;
 }
 .music-absolute.router-link-active, .music-allusion.router-link-active, .music-popular.router-link-active, .music-radio.router-link-active{
        font-size:20px;

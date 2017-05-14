@@ -1,45 +1,28 @@
 <template>
-  <div id="app">
-  <!--  <link href="https://unpkg.com/animate.css@3.5.1/animate.min.css" rel="stylesheet" type="text/css">
-    <transition 
-    name="mheader-transition"
-    enter-active-class="animated flip"
-    leave-active-class="animated bounceOutRight"
-    >
-    <mheader v-show="showstart" v-on:songSearch="songSearch"></mheader>
-    </transition>
-   <song id="songwrapper" v-if="showsong" :songs="songSearchData"></song>
-    <mcssdog v-if="showdog" id="cssdog" ref="cssdog">{{showdog}}</mcssdog>
-    <mfooter></mfooter>-->
-    <!-- 这是一个flash动画 -->
-    <mcssdog v-if="!showdog" id="cssdog" ref="cssdog">{{showdog}}</mcssdog>
-   
-    <div v-if="showdog" id="app-header">
-      <start-header></start-header>
-    </div>
-    <carousel v-if="showdog" class="app-carousel"></carousel>
-    <div v-if="showdog" id="app-menu-body">
-        <menu-body></menu-body>
-    </div>
-    <div v-if="showdog" id="app-scroll">
-      <keep-alive>
-         <router-view></router-view>
-      </keep-alive>
-    </div>
-    <mfooter v-if="showdog"></mfooter>
+  <div id="app" @click="showMenuLeft = false">
+      <transition
+        enter-active-class="animated slideInLeft"
+        leave-active-class="animated slideOutLeft"
+        >
+         <menu-left v-if="showMenuLeft" class="menu-left"></menu-left>
+      </transition>
+
+      <router-view class="app-router-view"></router-view>
+
+      <mfooter class="app-footer"></mfooter>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
+  import BScroll from 'better-scroll'
+
 export default {
   name: 'app',
   components: {
-    song: require('@/components/songs/Song.vue'),
     mcssdog: require('@/components/animate/cssdog.vue'),
     mfooter: require('@/components/footer/Footer.vue'),
     startHeader: require('@/components/header/startHeader.vue'),
-    Carousel: require('@/components/songs/carousel.vue'),
-    menuBody: require('@/components/body/MenuBody.vue')
+    menuLeft: require('./components/menuLeft.vue')
   },
   methods: {
     songSearch: function (data) {
@@ -55,12 +38,13 @@ export default {
       songSearchData: {},
       showsong: false,
       showstart: false,
-      showdog:false
+      showMenuLeft: false,
+      showdog:false,
+      transitionName: 'fade-m'
     }
   },
   created: function () {
-    //激活路由 popular
-    this.$router.push('/search')
+    this.$router.push('/home')
     this.$nextTick(function () {
         var self = this
         //将启动动画 隐藏
@@ -68,11 +52,9 @@ export default {
           self.showdog = true
           self.showstart = true
           document.body.style="background:#fff"
-        },5000)
+        },0)
         //激活推荐歌单路由
-        
     })
-      
    //获取纯音乐 填充播放列表
           this.$http.get('/api/search?keywords=纯音乐').then((val) => {
                    console.log(val.body.result.songs)
@@ -92,29 +74,33 @@ export default {
                },(error) => {
                    console.log(error)
         })
+  },
+  computed: {
+    showHead: function () {
+      return this.$store.state.showHeader
+    }
   }
 }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
+@import '../node_modules/animate.css';
+@import url('./common/stylus/mixin.styl');
   body,html {
     height:100%;
   }
   #app{
     position:relative;
     display: flex;
-    min-width:360px;
-    height:100%;
+    height: 100%;
     margin:0 auto;
     flex-direction: column;
     overflow:hidden;
   }
-  #app-menu-body {
-    height: 50px;
-  }
-  #app-scroll {
-    flex: 1;
-    overflow:hidden;
+  .menu-left{
+    position: absolute;
+    left: 0px;
+    top: 0px;
   }
   #cssdog{
     position:absolute;
@@ -122,7 +108,33 @@ export default {
     left:50%;
     margin-left:-75px;
   }
-  .app-carousel {
-     top:50px;
+  .app-router-view{
+    flex: 1;
+    overflow: hidden;
   }
+  .app-footer{
+    height:  60px;
+  }
+  #app-header{
+    height: 50px;
+  }
+.aaa {
+   height: 50px;
+  }
+.bbb {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.aaaq{
+  height:50px;
+}
+.bbbq{
+  flex:1;
+  overflow: hidden;
+}
+.ccc {
+  height:50px;
+}
 </style>

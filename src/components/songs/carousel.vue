@@ -1,12 +1,12 @@
 <template>
-    <div id="carousel-wrapper">
+    <div class="carousel-wrapper">
          <el-carousel :interval="2000" type="card" height="100px">
              <el-carousel-item  v-for="(data,index) in datasArr" :key="index" class="carousel-imgitem">
-                <img :src="data.pic"></img>
+                <img :src="data.pic">
              </el-carousel-item>
          </el-carousel>
      </div>
-    
+
 
 </template>
 
@@ -14,16 +14,16 @@
     export default {
        data: function () {
            return {
-                datasArr: Object
+                datasArr: [{pic: require('./carousel1.jpg')},{pic:require('./carousel2.jpg')},{pic:require('./carousel3.jpg')},{pic:require('./carousel4.jpg')},{pic:require('./carousel5.jpg')}]
            }
        },
        created () {
+        console.log(this.datasArr)
           this.$nextTick(function () {
              this.$http.get('/api/banner').then( (val) => {
                  let result = val.body.banners
-                 console.log(result)
                  this.datasArr = result
-                 
+
              })
           })
        }
@@ -31,8 +31,9 @@
 </script>
 
 <style  lang="stylus"  rel="stylesheet/stylus" >
-    #carousel-wrapper {
-        max-width:360px;
+    @import '../../common/stylus/mixin.styl';
+    .carousel-wrapper {
+        width: 100%;
         margin:5px auto 0 auto;
         padding:0 10px 0 10px;
     }
@@ -46,7 +47,7 @@
   }
    .el-carousel__item > span > img {
         width:200px;
-        
+
    }
    #carousel-imgwrapper {
        text-align:center;
@@ -54,6 +55,6 @@
   .el-carousel__item > img {
         width:180px;
         height:100px
-        
+
    }
 </style>

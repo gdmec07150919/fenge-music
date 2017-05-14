@@ -23,17 +23,16 @@ console.log(rankingList)
         },
         created: function () {
             this.$nextTick(function () {
-                
+
                 let self = this
                 //设置排行榜item背景颜色
                 colors.forEach(function(value,index){
                     console.log(self.$refs.rangkingItem[index])
                     self.$refs.rangkingItem[index].$el.style ="background:" + value
                 })
-                
                 //设置滚动效果 better-scroll
                 new BScroll(this.$refs.rankingRef)
-                
+
             })
         }
     }
@@ -41,17 +40,9 @@ console.log(rankingList)
 
 <style rel="stylesheet/stylus" lang="stylus" scoped>
     .ranking{
-        position: absolute;
-        left: 0px;
-        top: 50px;
         width:100%;
-        height: 640px;
         background:rgba(33,33,33,0.1);
-        overflow:hidden;
         z-index:54;
     }
-    .ranking > div {
-        height:1100px;
-    }
-    
+
 </style>
