@@ -1,24 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://D:/vueDir/vuet1/src/App.vue" charset="UTF-8" />
-    <file url="file://D:/vueDir/vuet1/src/components/demo.vue" charset="UTF-8" />
-    <file url="file://D:/vueDir/vuet1/src/components/home.vue" charset="UTF-8" />
-    <file url="file://D:/vueDir/vuet1/src/components/search.vue" charset="UTF-8" />
-    <file url="file://D:/vueDir/vuet1/src/main.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/.babelrc" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/.eslintrc.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/config/index.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/package.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/App.vue" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/allPs/Ranking.vue" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/allPs/Search.vue" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/common/stylus/mixin.styl" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/components/body/Radio.vue" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/components/body/musicList.vue" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/components/menuLeft.vue" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/components/songs/carousel.vue" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/template.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../vuet1/src/App.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../vuet1/src/components/demo.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../vuet1/src/components/home.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../vuet1/src/components/search.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../vuet1/src/main.js" charset="UTF-8" />
   </component>
 </project>
