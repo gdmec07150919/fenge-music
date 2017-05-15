@@ -1,5 +1,6 @@
 <template>
   <div class="header">
+    <menu-left v-if="showMenuLeft" class="menu-left"></menu-left>
    <div class="search-back" @click="showHeader">
        <router-link to="/" tag="span" class="el-icon-arrow-left"></router-link>
     </div>
@@ -8,7 +9,7 @@
       placeholder="请输入内容"
       @select="handleSelect"
       ></el-autocomplete>
-    <el-button type="primary" icon="search" @click="search">搜索</el-button>
+    <el-button type="primary" icon="search" @click="search" style="margin:8px">搜索</el-button>
 
     <router-view></router-view>
   </div>

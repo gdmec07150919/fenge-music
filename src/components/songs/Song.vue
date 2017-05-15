@@ -135,6 +135,9 @@ import BScroll from 'better-scroll' //使用BScroll库实现滚动效果
     a {
         background:black;
     }
+    .songs-wrapper{
+      height: 100%;
+    }
     .song-wrapper>ul>li {
       text-align: center;
     }

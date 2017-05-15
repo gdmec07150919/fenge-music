@@ -1,8 +1,7 @@
 <template>
   <div id="app" @click="showMenuLeft = false">
       <div style="height:50px;width:100%;position:absolute;background:#20A0FF;top:0px;"></div>
-      <menu-left v-if="showMenuLeft" class="menu-left"></menu-left>
-        <div style="position:relative;height:100%;flex:1;overflow: hidden;" >
+        <div style="position:relative;height:100%;height:100%;display:flex;overflow: hidden;" >
           <transition :name="transitionName">
             <router-view class="app-router-view"></router-view>
           </transition>
@@ -126,50 +125,6 @@ export default {
   #app-header{
     height: 50px;
   }
-.aaa {
-   height: 50px;
-  }
-.bbb {
-  flex: 1;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-/*
-.slide-left-enter {
-  opacity:1;
-  transform: translate3d(-100%, 0, 0);
-}
-.slide-left-enter-active {
-    transition: all .2s linear;
-    opacity:1;
-}
-.slide-left-leave{
-  opacity: 1;
-  transform: translate3d(-100%,0,0)
-}
-.slide-left-leave-acitve{
-  opacity: 1;
-  transition: all .2s linear;
-}
-  .slide-right-enter {
-    opacity: 1;
-    transform: translate3d(100%,0,0);
-  }
-  .slide-right-enter-active {
-    opacity:1;
-    transition: all .2s linear;
-  }
-.slide-right-leave{
-  opacity: 1;
-  transform: translate3d(100%,0,0);
-}
-.slide-right-leave-active {
-  transition: all .2s linear;
-  opacity:1;
-}
-*/
-
 .slide-left-enter {
   opacity: 1;
   transform: translate3d(100%, 0, 0);

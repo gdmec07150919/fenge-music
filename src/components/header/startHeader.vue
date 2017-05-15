@@ -1,6 +1,7 @@
 <template>
     <div id="start-header">
         <div class="app-header-menu fa-reorder" @click.stop="showMenuLeft"></div>
+      <menu-left v-if="showMenuLeft" class="menu-left"></menu-left>
         <div class="font-wrapper">
             <router-link tag = "span" :to="{name: 'home'}" class="music-recommoned" >主页</router-link>
             <router-link tag = "span" :to="{name: 'ranking'}"  class="music-ranking-list">排行榜</router-link>

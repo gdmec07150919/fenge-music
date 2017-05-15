@@ -69,6 +69,7 @@ import song from '@/components/songs/Song.vue';
   }
   .hot{
     margin: 10px;
+
   }
   h3 {
     margin-bottom: 3px;
