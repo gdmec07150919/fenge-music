@@ -86,6 +86,7 @@ export default {
       console.log(toP)
       console.log(fromP)
       this.transitionName = toP === 'search' && fromP === 'popular' ? 'slide-left' : 'slide-right'
+      this.transitionName = (toP === 'ranking' && fromP === 'popular') || (toP === 'popular' && fromP === 'popular') ? 'slide-left' : 'slide-right'
     console.log(this.transitionName)
     }
   }

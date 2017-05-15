@@ -1,9 +1,14 @@
 <template>
+  <div class="ranking">
+    <r-header></r-header>
     <r-ranking></r-ranking>
+  </div>
+
 </template>
 
 <script type="text/ecmascript-6">
 import ranking from '@/components/top-menu/Ranking.vue';
+import header from '@/components/header/startHeader.vue';
     export default {
         data: function () {
             return {
@@ -11,7 +16,8 @@ import ranking from '@/components/top-menu/Ranking.vue';
             }
         },
         components: {
-            'r-ranking': ranking
+            'r-ranking': ranking,
+            'r-header': header
         }
     }
 </script>
