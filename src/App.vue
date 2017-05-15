@@ -1,14 +1,12 @@
 <template>
   <div id="app" @click="showMenuLeft = false">
-      <transition
-        enter-active-class="animated slideInLeft"
-        leave-active-class="animated slideOutLeft"
-        >
-         <menu-left v-if="showMenuLeft" class="menu-left"></menu-left>
-      </transition>
-
-      <router-view class="app-router-view"></router-view>
-
+      <div style="height:50px;width:100%;position:absolute;background:#20A0FF;top:0px;"></div>
+      <menu-left v-if="showMenuLeft" class="menu-left"></menu-left>
+        <div style="position:relative;height:100%;flex:1;overflow: hidden;" >
+          <transition :name="transitionName">
+            <router-view class="app-router-view"></router-view>
+          </transition>
+        </div>
       <mfooter class="app-footer"></mfooter>
   </div>
 </template>
@@ -40,11 +38,10 @@ export default {
       showstart: false,
       showMenuLeft: false,
       showdog:false,
-      transitionName: 'fade-m'
+      transitionName: 'slide-left'
     }
   },
   created: function () {
-    this.$router.push('/home')
     this.$nextTick(function () {
         var self = this
         //将启动动画 隐藏
@@ -78,6 +75,17 @@ export default {
   computed: {
     showHead: function () {
       return this.$store.state.showHeader
+    }
+  },
+  watch: {
+    '$route': function (to,from) {
+      console.log('路由变化了')
+      const toP = to.path.split('/')[1];
+      const fromP = from.path.split('/')[1];
+      console.log(toP)
+      console.log(fromP)
+      this.transitionName = toP === 'search' && fromP === 'popular' ? 'slide-left' : 'slide-right'
+    console.log(this.transitionName)
     }
   }
 }
@@ -127,14 +135,83 @@ export default {
   display: flex;
   flex-direction: column;
 }
-.aaaq{
-  height:50px;
+/*
+.slide-left-enter {
+  opacity:1;
+  transform: translate3d(-100%, 0, 0);
 }
-.bbbq{
-  flex:1;
-  overflow: hidden;
+.slide-left-enter-active {
+    transition: all .2s linear;
+    opacity:1;
 }
-.ccc {
-  height:50px;
+.slide-left-leave{
+  opacity: 1;
+  transform: translate3d(-100%,0,0)
 }
+.slide-left-leave-acitve{
+  opacity: 1;
+  transition: all .2s linear;
+}
+  .slide-right-enter {
+    opacity: 1;
+    transform: translate3d(100%,0,0);
+  }
+  .slide-right-enter-active {
+    opacity:1;
+    transition: all .2s linear;
+  }
+.slide-right-leave{
+  opacity: 1;
+  transform: translate3d(100%,0,0);
+}
+.slide-right-leave-active {
+  transition: all .2s linear;
+  opacity:1;
+}
+*/
+
+.slide-left-enter {
+  opacity: 1;
+  transform: translate3d(100%, 0, 0);
+}
+.slide-left-leave{
+  opacity: 1;
+}
+.slide-left-enter-active {
+  opacity: 1;
+  transition: all .2s linear;
+  position: absolute;
+  top:0px;
+}
+.slide-left-leave-active {
+transform: translate3d(-100%, 0, 0);
+opacity: 1;
+transition: all .2s linear;
+position: absolute;
+top:0px;
+}
+
+.slide-right-enter{
+opacity: 1;
+transform: translate3d(-100%, 0, 0);
+top:0px;
+}
+.slide-right-leave{
+  opacity: 1;
+}
+.slide-right-enter-active {
+position: absolute;
+top:0px;
+opacity: 1;
+transition: all .2s linear;
+}
+.slide-right-leave-active{
+  position: absolute;
+  transform: translate3d(100%, 0, 0);
+  top:0px;
+  opacity: 1;
+  transition: all .2s linear;
+}
+
+
 </style>

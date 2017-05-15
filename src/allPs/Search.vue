@@ -1,8 +1,8 @@
 <template>
-  <transition mode="out in"
-    enter-active-class="animated slideInRight"
-    leave-active-class="animated slideOutRight"
-    >
+<!--  <transition mode="out-in"
+    enter-active-class="animated slideOutLeft"
+    leave-active-class="animated slideInLeft"
+    >-->
     <div id = "search">
       <s-header  v-on:songSearch="songSearch" :searchSuggest="searchSuggestToSon" :key="1" class="header"></s-header>
       <div class="hot"  v-if="!showsong">
@@ -16,7 +16,7 @@
       </div>
       <s-song v-if="showsong" class="song"></s-song>
     </div>
-  </transition>
+<!--  </transition>-->
 </template>
 
 <script type="text/ecmascript-6">
@@ -28,7 +28,8 @@ import song from '@/components/songs/Song.vue';
               songSearchData: Object,
               searchSuggest:["鹿晗","薛之谦","张杰","逃","说散就散"],
               searchSuggestToSon: "六月的雨",
-              showsong: false
+              showsong: false,
+              tansitionName: 'slide-right'
             }
         },
         components: {
@@ -61,6 +62,7 @@ import song from '@/components/songs/Song.vue';
   #search{
     display: flex;
     flex-direction: column;
+    width: 100%;
   }
   .header{
     height: 50px;

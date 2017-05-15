@@ -1,8 +1,4 @@
 <template>
-  <transition mode="out in"
-              enter-active-class="animated slideInLeft"
-              leave-active-class="animated slideOutLeft"
-    >
     <div class="home">
       <h-header></h-header>
       <h-carousel class="h-carousel"></h-carousel>
@@ -11,7 +7,6 @@
         <router-view ></router-view>
       </div>
     </div>
-    </transition>
 </template>
 
 <script type="text/ecmascript-6">
@@ -31,7 +26,7 @@
             'h-header': header
         },
         created: function () {
-          this.$router.push('/home/popular')
+          this.$router.push('/popular')
           let self = this
           setTimeout(function() {
             self.hScroll = new BScroll(self.$refs.scroll,{
@@ -73,6 +68,8 @@
   .home{
     display: flex;
     flex-direction: column;
+    border-right:1px #ccc;
+    width:100%;
   }
   .h-carousel{
     height:130px;
@@ -84,4 +81,5 @@
     flex: 1;
     overflow: hidden;
   }
+
 </style>

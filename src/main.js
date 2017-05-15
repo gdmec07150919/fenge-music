@@ -148,7 +148,7 @@ var ranking = resolve => require(['@/allPs/Ranking.vue'], resolve)
 var home = require('@/allPs/Home.vue')
 var search = require('@/allPs/Search.vue')
 const routes = [
-  {path: '/home', name: 'home', component: home,
+  {path: '/', name: 'home', component: home,
         children: [{
           path: 'popular',
           name: 'popular',

@@ -6,7 +6,7 @@
             <router-link tag = "span" :to="{name: 'ranking'}"  class="music-ranking-list">排行榜</router-link>
             <router-link tag = "span" to="personal"  class="music-personal">个人</router-link>
         </div>
-        <div class="search-wrapper"  @click="hiddeHeader"><router-link tag="span" :to="{name:'search'}" class="fa-search"></router-link></div>
+        <div class="search-wrapper"  @click="hiddeHeader"><router-link tag="span" to="/search" class="fa-search"></router-link></div>
     </div>
 </template>
 
@@ -26,7 +26,6 @@
                 this.$emit('hiddeMenuLeft')
             },
             hiddeHeader: function () {
-              this.$store.commit('setShowHeader',false)
             }
         }
     }
@@ -40,6 +39,7 @@
     background:#20A0FF;
     color:#E5E9F2;
     font-size:36px;
+    margin: 0;
   }
 .app-header-menu {
     display:inline-block;
