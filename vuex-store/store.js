@@ -5,7 +5,8 @@ export const store = new Vuex.Store({
         playList: {},  //播放列表
         playingSong: {} ,//正在播放的歌曲
         index: 0,
-        playListSecordNav: {}
+        playListSecordNav: {},
+        showMenuLeft: false
     },
     mutations: {
         modifyToPlay (state) {
@@ -36,15 +37,9 @@ export const store = new Vuex.Store({
                 state.index --
             }
             state.playingSong = state.playList[state.index]
+        },
+        showMenuLeft (state, isShow) {
+            state.showMenuLeft = isShow
         }
-
-
-
-
-
-
-
-
-
     }
 })

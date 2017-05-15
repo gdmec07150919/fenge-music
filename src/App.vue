@@ -1,5 +1,5 @@
 <template>
-  <div id="app" @click="showMenuLeft = false">
+  <div id="app" @click="hiddeMenuLeft">
       <div style="height:50px;width:100%;position:absolute;background:#20A0FF;top:0px;"></div>
         <div style="position:relative;height:100%;height:100%;display:flex;overflow: hidden;" >
           <transition :name="transitionName">
@@ -18,8 +18,7 @@ export default {
   components: {
     mcssdog: require('@/components/animate/cssdog.vue'),
     mfooter: require('@/components/footer/Footer.vue'),
-    startHeader: require('@/components/header/startHeader.vue'),
-    menuLeft: require('./components/menuLeft.vue')
+    startHeader: require('@/components/header/startHeader.vue')
   },
   methods: {
     songSearch: function (data) {
@@ -28,6 +27,9 @@ export default {
       if(!this.showsong){
         this.showsong = true
       }
+    },
+    hiddeMenuLeft: function () {
+      this.$store.commit('showMenuLeft', false)
     }
   },
   data: function () {

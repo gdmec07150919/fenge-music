@@ -1,13 +1,18 @@
 <template>
     <div id="start-header">
-        <div class="app-header-menu fa-reorder" @click.stop="showMenuLeft"></div>
-      <menu-left v-if="showMenuLeft" class="menu-left"></menu-left>
+      <transition
+        enter-active-class="animated slideInLeft"
+        leave-active-class="animated fadeOutLeftBig"
+        >
+        <menu-left v-if="showMenuLeft" class="menu-left"></menu-left>
+      </transition>
+        <div class="app-header-menu fa-reorder" @click.stop="_showMenuLeft"></div>
         <div class="font-wrapper">
             <router-link tag = "span" :to="{name: 'home'}" class="music-recommoned" >主页</router-link>
             <router-link tag = "span" :to="{name: 'ranking'}"  class="music-ranking-list">排行榜</router-link>
             <router-link tag = "span" to="personal"  class="music-personal">个人</router-link>
         </div>
-        <div class="search-wrapper"  @click="hiddeHeader"><router-link tag="span" to="/search" class="fa-search"></router-link></div>
+        <div class="search-wrapper"><router-link tag="span" to="/search" class="fa-search"></router-link></div>
     </div>
 </template>
 
@@ -23,12 +28,19 @@
             clinkPersonal: function () {
                 this.$router.push('/personal')
             },
-            showMenuLeft: function () {
-                this.$emit('hiddeMenuLeft')
-            },
-            hiddeHeader: function () {
+            _showMenuLeft: function () {
+                console.log('showMenuLeft')
+                this.$store.commit('showMenuLeft', true)
             }
+        },
+      computed: {
+        showMenuLeft: function () {
+          return this.$store.state.showMenuLeft
         }
+      },
+      components: {
+        menuLeft: require('../menuLeft.vue')
+      }
     }
 </script>
 
