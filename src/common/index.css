@@ -28,3 +28,12 @@ fieldset,img{border:0;}
 button,input,select,textarea{font-size:100%;}
 
 table{border-collapse:collapse;border-spacing:0;}
+@media screen and (min-width: 550px){
+  html,body{
+    width: 414px;
+    margin:0 auto;
+  }
+  body{
+
+  }
+}
