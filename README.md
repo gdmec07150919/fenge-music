@@ -1,7 +1,7 @@
 # fenge-music
 
 > A Vue.js project
-项目地址:http://139.199.219.208:8080
+项目地址:http://huangwufeng.cn
 ## Build Setup
 
 ``` bash
