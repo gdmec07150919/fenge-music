@@ -16,7 +16,7 @@
 export default {
   name: 'app',
   components: {
-    mcssdog: require('@/components/animate/cssdog.vue'),
+    /*mcssdog: require('@/components/animate/cssdog.vue'),*/
     mfooter: require('@/components/footer/Footer.vue'),
     startHeader: require('@/components/header/startHeader.vue')
   },
@@ -87,6 +87,28 @@ export default {
       console.log(fromP)
       this.transitionName = toP === 'search' && fromP === 'popular' ? 'slide-left' : 'slide-right'
       this.transitionName = (toP === 'ranking' && fromP === 'popular') || (toP === 'popular' && fromP === 'popular') ? 'slide-left' : 'slide-right'
+      switch(fromP){
+        case 'popular':
+        {
+          switch (toP) {
+            case 'search':
+            {
+              this.transitionName = 'slide-left'
+              break;
+            }
+            case 'ranking':
+            {
+              this.transitionName = 'slide-left'
+              break;
+            }
+          }
+          break;
+        }
+        default: {
+          this.transitionName = 'slide-right'
+        }
+      }
+
     console.log(this.transitionName)
     }
   }

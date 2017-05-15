@@ -139,14 +139,14 @@ Vue.use(VueRouter)
 Vue.use(VueResource)
 
 
-var songs = require('./components/songs/Song.vue')
-var recommonedList = require('./components/top-menu/RecommonedList.vue')
-var popularList = require('./components/body/PopularList.vue')
-var radio = require('./components/body/Radio.vue')
+var songs =  resolve => require(['./components/songs/Song.vue'], resolve)
+var recommonedList = resolve => require([ './components/top-menu/RecommonedList.vue'], resolve)
+var popularList = resolve => require(['./components/body/PopularList.vue'], resolve)
+var radio = resolve => require([ './components/body/Radio.vue'], resolve)
 var ranking = resolve => require(['@/allPs/Ranking.vue'], resolve)
 //var search = resolve => require(['@/allPs/Search.vue'],resolve)
 var home = require('@/allPs/Home.vue')
-var search = require('@/allPs/Search.vue')
+var search = resolve => require([ '@/allPs/Search.vue'], resolve)
 const routes = [
   {path: '/', name: 'home', component: home,
         children: [{
