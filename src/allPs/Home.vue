@@ -37,8 +37,6 @@
               console.log(self.hScroll)
             })
           },2000)
-          console.log('loading')
-          console.log(this.$loading)
         },
       methods: {
         toD: function () {

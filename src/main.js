@@ -74,7 +74,7 @@ import {
   CollapseItem,
   Cascader,
   ColorPicker,
-  Loading 
+  Loading
   } from 'element-ui'
    Vue.prototype.$loading = Loading
 
@@ -172,14 +172,19 @@ const routes = [
         }]
   },
   {path: '/ranking', name: 'ranking', component: ranking},
-  {path: '/search', name: 'search', component: search}, 
+  {path: '/search', name: 'search', component: search},
   {path: '/personal', name: 'personal', component: personal}
 ]
 const router = new VueRouter({
   routes
 })
+router.beforeEach((to, from, next) => {
+  //显示加载中字样
+  console.log(to)
+  console.log(from.name === null)
 let loadingInstance1 = Loading.service({ fullscreen: true });
-setTimeout(()=>{loadingInstance1.close();},2000)
+setTimeout(()=>{loadingInstance1.close(); next()},300)
+})
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
@@ -187,7 +192,6 @@ new Vue({
   el: '#app',
   store,
   router,
-  loading: Loading,
   template: '<App/>',
   components: { App }
 })
