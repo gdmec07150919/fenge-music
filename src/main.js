@@ -73,8 +73,10 @@ import {
   Collapse,
   CollapseItem,
   Cascader,
-  ColorPicker
+  ColorPicker,
+  Loading 
   } from 'element-ui'
+   Vue.prototype.$loading = Loading
 
 Vue.use(Pagination)
 Vue.use(Dialog)
@@ -147,6 +149,7 @@ var ranking = resolve => require(['@/allPs/Ranking.vue'], resolve)
 //var search = resolve => require(['@/allPs/Search.vue'],resolve)
 var home = require('@/allPs/Home.vue')
 var search = resolve => require([ '@/allPs/Search.vue'], resolve)
+var personal = resolve => require(['@/allPs/Personal.vue'],resolve)
 const routes = [
   {path: '/', name: 'home', component: home,
         children: [{
@@ -169,12 +172,14 @@ const routes = [
         }]
   },
   {path: '/ranking', name: 'ranking', component: ranking},
-  {path: '/search', name: 'search', component: search},
+  {path: '/search', name: 'search', component: search}, 
+  {path: '/personal', name: 'personal', component: personal}
 ]
 const router = new VueRouter({
   routes
 })
-
+let loadingInstance1 = Loading.service({ fullscreen: true });
+setTimeout(()=>{loadingInstance1.close();},2000)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
@@ -182,6 +187,7 @@ new Vue({
   el: '#app',
   store,
   router,
+  loading: Loading,
   template: '<App/>',
   components: { App }
 })

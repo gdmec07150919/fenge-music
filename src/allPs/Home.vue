@@ -37,6 +37,8 @@
               console.log(self.hScroll)
             })
           },2000)
+          console.log('loading')
+          console.log(this.$loading)
         },
       methods: {
         toD: function () {
@@ -75,7 +77,7 @@
     height:130px;
   }
   .h-menu {
-    rem-height(50);
+    height:50px;
   }
   .h-router-view{
     flex: 1;
