@@ -40,7 +40,7 @@
           this.SongArray.forEach((v) => {
             let objSong = {
               'name': v.name, //歌曲名称
-              'picUrl': v.album.picUrl,//歌手名
+              'picUrl': v.album.picUrl,//歌手图片
               'popularity': v.popularity,
               'mp3Url': v.mp3Url,
               'isplaying': false

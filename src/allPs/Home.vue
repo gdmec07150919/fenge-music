@@ -32,10 +32,6 @@
             self.hScroll = new BScroll(self.$refs.scroll,{
               click:true
             })
-            self.hScroll.on('destroy', (pos) => {
-              console.log('destroy啦啦啦 ')
-              console.log(self.hScroll)
-            })
           },2000)
         },
       methods: {
@@ -51,10 +47,6 @@
             let self = this
             setTimeout(function() {
               self.hScroll = new BScroll(self.$refs.scroll,{
-              })
-              self.hScroll.on('destroy', (pos) => {
-                console.log('destroy啦啦啦 ')
-                console.log(self.hScroll)
               })
             },2000)
           }

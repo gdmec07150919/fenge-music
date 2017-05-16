@@ -3,7 +3,7 @@
          <div id="menu-body">
             <router-link tag = "span" to="/popular" class="music-popular">流行</router-link> <!-- Nodejs网易云api: 网友精选碟 (歌单) -->
             <router-link tag = "span" to="/pure" class="music-absolute">纯音乐</router-link>
-            <router-link tag = "span" to="allusion" class="music-allusion">古典</router-link>
+            <router-link tag = "span" to="/classic" class="music-allusion">古典</router-link>
             <router-link tag = "span" to="radio" class="music-radio">电台</router-link>
         </div>
     </div>

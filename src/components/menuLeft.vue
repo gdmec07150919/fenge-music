@@ -26,7 +26,7 @@
 <style rel="stylesheet/stylus" lang="stylus" scoped>
   @import "../common/stylus/mixin.styl";
     .menu-left{
-      rem-width(150);
+      width: 150px;
       height: 100%;
       font-size: 30px;
       color: #fbfdff;

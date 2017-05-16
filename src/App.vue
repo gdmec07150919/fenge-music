@@ -120,6 +120,8 @@ export default {
 @import url('./common/stylus/mixin.styl');
   body,html {
     height:100%;
+    border-left:1px #ccc solid;
+    border-right:1px #ccc solid;
   }
   #app{
     position:relative;

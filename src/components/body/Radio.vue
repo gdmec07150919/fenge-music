@@ -9,6 +9,7 @@
     beforeCreate: function () {
       this.$http.get('/api/top/playlist?limit=30').then((val) => {
         this.popularData = val.body.playlists
+        console.log(this.popularData)
       },(error) => {
         console.log(error)
       })

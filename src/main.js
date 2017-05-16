@@ -142,14 +142,16 @@ Vue.use(VueResource)
 
 
 var songs =  resolve => require(['./components/songs/Song.vue'], resolve)
-var recommonedList = resolve => require([ './components/top-menu/RecommonedList.vue'], resolve)
 var popularList = resolve => require(['./components/body/PopularList.vue'], resolve)
+var classic = resolve => require(['./components/body/Classic.vue'],resolve)
+var pure = resolve => require(['./components/body/Pure.vue'],resolve)
 var radio = resolve => require([ './components/body/Radio.vue'], resolve)
 var ranking = resolve => require(['@/allPs/Ranking.vue'], resolve)
 //var search = resolve => require(['@/allPs/Search.vue'],resolve)
 var home = require('@/allPs/Home.vue')
 var search = resolve => require([ '@/allPs/Search.vue'], resolve)
 var personal = resolve => require(['@/allPs/Personal.vue'],resolve)
+
 const routes = [
   {path: '/', name: 'home', component: home,
         children: [{
@@ -164,12 +166,17 @@ const routes = [
           component: radio,
           props: true
         },
-        {
-          path: 'popular',
-          name: 'popular',
-          component: popularList,
-          props: true
-        }]
+          {
+            path: 'pure',
+            name: 'pure',
+            component: pure,
+            props: true
+          },
+          {
+            path: 'classic',
+            name: 'classic',
+            component: classic,
+          }]
   },
   {path: '/ranking', name: 'ranking', component: ranking},
   {path: '/search', name: 'search', component: search},
@@ -183,7 +190,11 @@ router.beforeEach((to, from, next) => {
   console.log(to)
   console.log(from.name === null)
 let loadingInstance1 = Loading.service({ fullscreen: true });
-setTimeout(()=>{loadingInstance1.close(); next()},300)
+if(to.name=="pure" || to.name == 'classic' || to.name == 'radio'){
+  setTimeout(()=>{loadingInstance1.close(); next()},3000)
+}else{
+  setTimeout(()=>{loadingInstance1.close(); next()},250)
+}
 })
 Vue.config.productionTip = false
 
