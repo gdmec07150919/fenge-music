@@ -187,10 +187,15 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   let loadingInstance1 = Loading.service({fullscreen: true});
   store._modules.root.state.loading = loadingInstance1
-  setTimeout(()=>{
-    loadingInstance1.close()
-  },1500)
-
+  if(to.name == 'search'){
+    setTimeout(()=>{
+      loadingInstance1.close()
+  },5000)
+  }else{
+    setTimeout(()=>{
+      loadingInstance1.close()
+    },1500)
+  }
   next()
 })
 Vue.config.productionTip = false

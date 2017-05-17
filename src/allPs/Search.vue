@@ -58,7 +58,12 @@ import song from '@/components/songs/Song.vue';
             this.showsong = false
             this.songSearchData = null
             next()
-          }
+          },
+        mounted: function () {
+          this.$nextTick(()=> {
+              this.$store.state.loading.close()
+          })
+        }
     }
 </script>
 

@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3edd70d9-9fe2-447b-8dbb-6eb6e8f9a83d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/body/Classic.vue" afterPath="$PROJECT_DIR$/src/components/body/Classic.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/allPs/Home.vue" afterPath="$PROJECT_DIR$/src/allPs/Home.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/allPs/Personal.vue" afterPath="$PROJECT_DIR$/src/allPs/Personal.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/body/PopularList.vue" afterPath="$PROJECT_DIR$/src/components/body/PopularList.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/body/Pure.vue" afterPath="$PROJECT_DIR$/src/components/body/Pure.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/body/Radio.vue" afterPath="$PROJECT_DIR$/src/components/body/Radio.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/allPs/Ranking.vue" afterPath="$PROJECT_DIR$/src/allPs/Ranking.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/allPs/Search.vue" afterPath="$PROJECT_DIR$/src/allPs/Search.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.js" afterPath="$PROJECT_DIR$/src/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vuex-store/store.js" afterPath="$PROJECT_DIR$/vuex-store/store.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="fenge-music.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.064516">
-              <caret line="191" column="8" selection-start-line="191" selection-start-column="8" selection-end-line="191" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.6457726">
+              <caret line="197" column="3" selection-start-line="197" selection-start-column="3" selection-end-line="197" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -93,11 +84,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Pure.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Pure.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/body/Pure.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6676923">
-              <caret line="52" column="6" selection-start-line="52" selection-start-column="6" selection-end-line="52" selection-end-column="6" />
+            <state vertical-scroll-proportion="-4.8656716">
+              <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="52" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -106,8 +97,8 @@
       <file leaf-file-name="Search.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/allPs/Search.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.641791">
-              <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
+            <state vertical-scroll-proportion="-6.880597">
+              <caret line="61" column="30" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -166,16 +157,16 @@
         <option value="$PROJECT_DIR$/src/components/body/MenuBody.vue" />
         <option value="$PROJECT_DIR$/src/components/search/SearchHeader.vue" />
         <option value="$PROJECT_DIR$/vuex-store/store.js" />
-        <option value="$PROJECT_DIR$/src/allPs/Search.vue" />
         <option value="$PROJECT_DIR$/src/allPs/Ranking.vue" />
         <option value="$PROJECT_DIR$/src/allPs/Personal.vue" />
         <option value="$PROJECT_DIR$/src/App.vue" />
         <option value="$PROJECT_DIR$/src/allPs/Home.vue" />
-        <option value="$PROJECT_DIR$/src/main.js" />
         <option value="$PROJECT_DIR$/src/components/body/Classic.vue" />
         <option value="$PROJECT_DIR$/src/components/body/Radio.vue" />
         <option value="$PROJECT_DIR$/src/components/body/PopularList.vue" />
         <option value="$PROJECT_DIR$/src/components/body/Pure.vue" />
+        <option value="$PROJECT_DIR$/src/allPs/Search.vue" />
+        <option value="$PROJECT_DIR$/src/main.js" />
       </list>
     </option>
   </component>
@@ -835,14 +826,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.064516">
-          <caret line="191" column="8" selection-start-line="191" selection-start-column="8" selection-end-line="191" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vuex-store/store.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-30.838709">
@@ -855,14 +838,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.477612">
           <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/allPs/Search.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.641791">
-          <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -901,8 +876,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/body/Pure.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6676923">
-          <caret line="52" column="6" selection-start-line="52" selection-start-column="6" selection-end-line="52" selection-end-column="6" />
+        <state vertical-scroll-proportion="-4.8656716">
+          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="52" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/allPs/Search.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.880597">
+          <caret line="61" column="30" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6457726">
+          <caret line="197" column="3" selection-start-line="197" selection-start-column="3" selection-end-line="197" selection-end-column="3" />
           <folding />
         </state>
       </provider>
