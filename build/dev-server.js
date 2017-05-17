@@ -71,7 +71,9 @@ app.use(staticPath, express.static('./static'))
 app.use(express.static('./router'))
 
 var uri = 'http://localhost:' + port
-
+app.use('/api', proxyMiddleware({target: 'http://huangwufeng.cn:3000', changeOrigin: true,pathRewrite: {
+  '^/api': ''
+}}))
 var _resolve
 var readyPromise = new Promise(resolve => {
   _resolve = resolve

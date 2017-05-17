@@ -10,20 +10,20 @@ export const store = new Vuex.Store({
         loading: {} //加载中 等待
     },
     mutations: {
-        modifyToPlay (state) {
+        modifyToPlay: function (state) {
             state.isPlay = true //修改为 正在播放 状态
         },
-        modifyToPause (state) {
+        modifyToPause: function (state) {
             state.isPlay = false
         },
-        setPlayList (state, data) {  //设置播放歌曲的列表
+        setPlayList: function (state, data) {  //设置播放歌曲的列表
             state.playList = data
         },
-        setPlaySong (state, index) { // 表示当前哪一首歌曲被播放 index表示播放歌曲列表中的 某一项
+        setPlaySong: function (state, index) { // 表示当前哪一首歌曲被播放 index表示播放歌曲列表中的 某一项
             state.playingSong = state.playList[index]
             state.index = index
         },
-        nextSong (state) { //下一曲
+        nextSong: function (state) { //下一曲
             console.log(state.playList)
             console.log('nnnnnn')
             if(state.playList.length-1 > state.index)
@@ -32,17 +32,17 @@ export const store = new Vuex.Store({
             }
             state.playingSong = state.playList[state.index]
         },
-        previousSong (state) { //下一曲
+        previousSong: function (state) { //下一曲
             if(state.index > 0 && state.playList.length > 0)
             {
                 state.index --
             }
             state.playingSong = state.playList[state.index]
         },
-        showMenuLeft (state, isShow) {
+        showMenuLeft: function (state, isShow) {
             state.showMenuLeft = isShow
         },
-        LoadingClose(state, loadingInstance) {
+        LoadingClose: function (state, loadingInstance) {
             state.loading.close()
         }
     }

@@ -26,12 +26,13 @@ export default {
    methods: {
        _initBScroll: function () {
            if ( this.playlistBScroll != null ){
+             this.playlistBScroll.refresh()
                return
            }
-          console.log('new BSCroll')
             this.playlistBScroll = new BScroll(this.$refs.popularsWrapper, {
               click: true
           })
+         console.log(this.playlistBScroll)
        }
    },
    components: {

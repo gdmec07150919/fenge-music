@@ -38,7 +38,6 @@ import song from '@/components/songs/Song.vue';
         }  ,
         methods: {
           songSearch: function (data) {
-            console.log('songSearchApp')
             this.songSearchData = data
             this.showsong = true
           },
@@ -54,7 +53,6 @@ import song from '@/components/songs/Song.vue';
         beforeRouteLeave (to, from, next) {
             // 导航离开该组件的对应路由时调用
             // 可以访问组件实例 `this`.
-            console.log('离开Search')
             this.showsong = false
             this.songSearchData = null
             next()

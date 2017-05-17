@@ -41,7 +41,6 @@
       },
       watch: {
         $route: function () {
-            console.log('路由变化')
           if(this.hScroll != null) {
             this.hScroll.destroy()
             let self = this
@@ -53,11 +52,9 @@
         }
       },
       beforeMount:  function () {
-        console.log('beforeMount')
         this.$store.state.loading.close()
       },
       beforeUpdate: function ()  {
-        console.log('beforeUpdate')
       },
       mounted: function ()  {
         console.log('mounted')

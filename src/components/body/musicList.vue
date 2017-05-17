@@ -1,4 +1,5 @@
 <template>
+  <div class="populars-wrapper" ref="popularsWrapper" @click="this.console.log('music click')">
     <ul>
       <li class="popular" v-for="playlist in musicListDatas" :key="playlist.id">
         <img :src="playlist.coverImgUrl" style="width:100px;height:100px;"/>
@@ -7,13 +8,14 @@
         </div>
       </li>
     </ul>
+  </div>
 </template>
 
 <script type="text/ecmascript-6">
   import BScroll from 'better-scroll'
     export default {
         props:{
-          musicListDatas: {}
+          musicListDatas: null
         },
         data: function () {
             return {
@@ -24,24 +26,40 @@
         methods: {
           _initBScroll: function () {
             if ( this.playlistBScroll != null ){
-              return
-            }
-            console.log('new BSCroll')
-
-           /* this.playlistBScroll = new BScroll(this.$refs.popularsWrapper, {
-              click: true
-            })*/
+            this.playlistBScroll.refresh()
+              console.log('torefresh')
+            return
+          }
+            this.playlistBScroll = new BScroll(this.$refs.popularsWrapper, {
+              click: true,
+              resizePolling:2
+            })
+            this.playlistBScroll.on('refresh', (pos) => {
+              console.log('refresh')
+            })
+            console.log(this.playlistBScroll)
+            console.log('popularLists');
           }
         },
         created: function() {
-          console.log('popularList');
-          console.log(this.songsListData)
           this.$nextTick(function () {
             let self = this
-            setTimeout(function () {
-              self._initBScroll()
-            },0)
+            for(var i = 1;i<6;i++)
+            {
+              setTimeout(function () {
+                if(self.musicListDatas != null){
+                  console.log('scroll'+self.playlistBScroll)
+                  self._initBScroll()
+                }
+              },250 * i*i)
+            }
           })
+        },
+        updated: function () {
+          console.log('updated M ')
+        },
+        destoryed: function () {
+          console.log('destoryed M ')
         }
     }
 </script>

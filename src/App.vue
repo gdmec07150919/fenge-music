@@ -22,7 +22,6 @@ export default {
   },
   methods: {
     songSearch: function (data) {
-      console.log('songSearchApp')
       this.songSearchData = data
       if(!this.showsong){
         this.showsong = true
@@ -61,11 +60,8 @@ export default {
   },
   watch: {
     '$route': function (to,from) {
-      console.log('路由变化了')
       const toP = to.path.split('/')[1];
       const fromP = from.path.split('/')[1];
-      console.log(toP)
-      console.log(fromP)
       this.transitionName = toP === 'search' && fromP === 'popular' ? 'slide-left' : 'slide-right'
       this.transitionName = (toP === 'ranking' && fromP === 'popular') || (toP === 'popular' && fromP === 'popular') ? 'slide-left' : 'slide-right'
       switch(fromP){
@@ -89,15 +85,12 @@ export default {
           this.transitionName = 'slide-right'
         }
       }
-
-    console.log(this.transitionName)
     }
   },
   mounted: function () {
     this.$nextTick(()=>{
       //获取纯音乐 填充播放列表
       this.$http.get('/api/search?keywords=纯音乐').then((val) => {
-        console.log(val.body.result.songs)
         var restaurants = []
         val.body.result.songs.forEach((v) => {
           let objSong = {
