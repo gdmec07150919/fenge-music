@@ -194,7 +194,7 @@ router.beforeEach((to, from, next) => {
   }else{
     setTimeout(()=>{
       loadingInstance1.close()
-    },1500)
+    },500)
   }
   next()
 })
