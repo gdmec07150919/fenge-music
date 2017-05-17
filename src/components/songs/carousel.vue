@@ -19,13 +19,15 @@
        },
        created () {
         console.log(this.datasArr)
-          this.$nextTick(function () {
-             this.$http.get('/api/banner').then( (val) => {
-                 let result = val.body.banners
-                 this.datasArr = result
 
-             })
-          })
+       },
+       mounted: function () {
+         this.$nextTick(function () {
+           this.$http.get('/api/banner').then( (val) => {
+             let result = val.body.banners
+             this.datasArr = result
+           })
+         })
        }
 }
 </script>

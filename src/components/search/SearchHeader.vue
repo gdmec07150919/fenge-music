@@ -77,10 +77,6 @@
   },
     created: function () {
       this.$nextTick(
-        function () {
-          this.$http.get().then((r) => {
-          })
-        }
       )
     },
     computed: {
