@@ -26,6 +26,7 @@
             'h-header': header
         },
         created: function () {
+          this.$store.state.loading.close()
           this.$router.push('/popular')
           let self = this
           setTimeout(function() {
@@ -51,6 +52,16 @@
             },2000)
           }
         }
+      },
+      beforeMount:  function () {
+        console.log('beforeMount')
+        this.$store.state.loading.close()
+      },
+      beforeUpdate: function ()  {
+        console.log('beforeUpdate')
+      },
+      mounted: function ()  {
+        console.log('Mount')
       }
     }
 </script>

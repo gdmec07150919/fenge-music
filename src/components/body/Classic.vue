@@ -28,7 +28,6 @@ export default {
            if ( this.playlistBScroll != null ){
                return
            }
-          console.log('new BSCroll')
             this.playlistBScroll = new BScroll(this.$refs.popularsWrapper, {
               click: true
           })
@@ -36,7 +35,14 @@ export default {
    },
    components: {
      musicList: MusicList
-   }
+   },
+  mounted:  function () {
+    this.$nextTick(()=>{
+      setTimeout(()=>{
+        this.$store.state.loading.close()
+      },1500)
+    })
+  }
 }
 </script>
 

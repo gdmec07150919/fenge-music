@@ -18,8 +18,13 @@ import header from '@/components/header/startHeader.vue';
         components: {
             'r-ranking': ranking,
             'r-header': header
+        },
+        created: function () {
+          this.$nextTick(()=> {
+            this.$store.state.loading.close()
+          })
         }
-    }
+      }
 </script>
 
 <style rel="stylesheet/stylus" lang="stylus" scoped>

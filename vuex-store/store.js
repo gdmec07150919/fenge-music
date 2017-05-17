@@ -6,7 +6,8 @@ export const store = new Vuex.Store({
         playingSong: {} ,//正在播放的歌曲
         index: 0,
         playListSecordNav: {},
-        showMenuLeft: false
+        showMenuLeft: false,
+        loading: {} //加载中 等待
     },
     mutations: {
         modifyToPlay (state) {
@@ -40,6 +41,9 @@ export const store = new Vuex.Store({
         },
         showMenuLeft (state, isShow) {
             state.showMenuLeft = isShow
+        },
+        LoadingClose(state, loadingInstance) {
+            state.loading.close()
         }
     }
 })

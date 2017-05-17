@@ -36,7 +36,14 @@ export default {
    },
    components: {
      musicList: MusicList
-   }
+   },
+  mounted:  function () {
+    this.$nextTick(()=> {
+      setTimeout(()=> {
+        this.$store.state.loading.close()
+      }, 1500)
+    })
+  }
 }
 </script>
 

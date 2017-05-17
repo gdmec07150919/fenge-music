@@ -21,23 +21,24 @@
 <script type="text/ecmascript-6">
   import header from '@/components/header/startHeader.vue';
   import BScroll from 'better-scroll'
-    export default {
-        data: function () {
-            return {
-              hScroll: null,
-              items1: ['音乐论坛','本地歌曲',"下载歌曲"],
-              items2:["我喜欢","下载MV","最近播放"],
-              items3 : ["听歌识别"]
-              }
-            },
-        components: {
-            'p-header': header
-        },
-        created: function () {
-        },
-      methods: {
-      }
+export default {
+    data: function () {
+      return {
+        hScroll: null,
+        items1: ['音乐论坛','本地歌曲',"下载歌曲"],
+        items2:["我喜欢","下载MV","最近播放"],
+        items3 : ["听歌识别"]
+        }
+    },
+    components: {
+        'p-header': header
+    },
+    created: function () {
+      this.$nextTick(()=> {
+        this.$store.state.loading.close()
+      })
     }
+}
 </script>
 
 <style rel="stylesheet/stylus" lang="stylus" scoped>

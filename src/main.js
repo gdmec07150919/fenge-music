@@ -14,7 +14,6 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 var {store} = require('@/../vuex-store/store.js')
-
 import {
   Pagination,
   Dialog,
@@ -186,18 +185,15 @@ const router = new VueRouter({
   routes
 })
 router.beforeEach((to, from, next) => {
-  //显示加载中字样
-  console.log(to)
-  console.log(from.name === null)
-let loadingInstance1 = Loading.service({ fullscreen: true });
-if(to.name=="pure" || to.name == 'classic' || to.name == 'radio'){
-  setTimeout(()=>{loadingInstance1.close(); next()},3000)
-}else{
-  setTimeout(()=>{loadingInstance1.close(); next()},250)
-}
+  let loadingInstance1 = Loading.service({fullscreen: true});
+  store._modules.root.state.loading = loadingInstance1
+  setTimeout(()=>{
+    loadingInstance1.close()
+  },1500)
+
+  next()
 })
 Vue.config.productionTip = false
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
