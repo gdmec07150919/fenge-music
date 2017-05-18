@@ -1,8 +1,19 @@
 <template>
   <div class="populars-wrapper" ref="popularsWrapper" @click="this.console.log('music click')">
-    <ul>
+    <ul ref="ul">
+      <div v-if="showLoading" class="loader-wrapper">
+        <div class="loader">
+          <div class="loader-inner ball-pulse-rise">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
       <li class="popular" v-for="playlist in musicListDatas" :key="playlist.id">
-        <img :src="playlist.coverImgUrl" style="width:100px;height:100px;"/>
+        <img v-on:load="_loaded" :src="playlist.coverImgUrl" style="width:100px;height:100px;"/>
         <div class="text-wrapper">
           <h3>{{playlist.name}}</h3>
         </div>
@@ -14,58 +25,67 @@
 <script type="text/ecmascript-6">
   import BScroll from 'better-scroll'
     export default {
-        props:{
-          musicListDatas: null
-        },
-        data: function () {
-            return {
-              popularData: Object,
-              playlistBScroll: null
-            }
-        },
-        methods: {
-          _initBScroll: function () {
-            if ( this.playlistBScroll != null ){
+      props: {
+        musicListDatas: null
+      },
+      data: function () {
+        return {
+          popularData: Object,
+          playlistBScroll: null,
+          showLoading: true           //是否显示加载中动画
+        }
+      },
+      methods: {
+        _initBScroll: function () {
+          if (this.playlistBScroll != null) {
             this.playlistBScroll.refresh()
-              console.log('torefresh')
             return
           }
-            this.playlistBScroll = new BScroll(this.$refs.popularsWrapper, {
-              click: true,
-              resizePolling:2
-            })
-            this.playlistBScroll.on('refresh', (pos) => {
-              console.log('refresh')
-            })
-            console.log(this.playlistBScroll)
-            console.log('popularLists');
-          }
-        },
-        created: function() {
-          this.$nextTick(function () {
-            let self = this
-            for(var i = 1;i<6;i++)
-            {
-              setTimeout(function () {
-                if(self.musicListDatas != null){
-                  console.log('scroll'+self.playlistBScroll)
-                  self._initBScroll()
-                }
-              },250 * i*i)
-            }
+          this.playlistBScroll = new BScroll(this.$refs.popularsWrapper, {
+            click: true,
+            resizePolling: 2
           })
         },
+        _loaded: function () {
+          this.showLoading = false
+        }
+      },
+      created: function () {
+        this.$nextTick(function () {
+          let self = this
+          for (var i = 1; i < 2; i++) {
+            setTimeout(function () {
+              if (self.musicListDatas != null) {
+                self._initBScroll()
+              }
+            }, 250 * i * i)
+          }
+        })
+      },
+      watch: {
+        musicListDatas: function () {
+          console.log('musicListDatas')
+          let self =this
+          setTimeout(function () {
+            if(self.playlistBScroll != null)
+            self.playlistBScroll.refresh()
+          }, 0);
+        }
+      },
+      computed: {
         updated: function () {
           console.log('updated M ')
         },
         destoryed: function () {
           console.log('destoryed M ')
         }
+      }
     }
 </script>
 
 <style rel="stylesheet/stylus" lang="stylus" scoped>
   @import '../../common/stylus/mixin.styl';
+  @import '../../../node_modules/loaders.css';
   .populars-wrapper {
     width:360px;
     margin: 0 auto;
@@ -92,4 +112,30 @@
     -webkit-box-orient:vertical;
     -webkit-line-clamp:2;
   }
+  .loader-wrapper{
+    position: absolute;
+    background:#fff;
+    color:red;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+  }
+    .loader{
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 500px;
+    }
+  .loader-inner{
+    position: relative;
+    width: 50%;
+    height:  50%;
+    margin-left: 20%;
+    vertical-align: middle;
+  }
+  .loader-inner div{
+    background-color: orange;
+  }
+
 </style>
