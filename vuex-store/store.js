@@ -8,7 +8,7 @@ export const store = new Vuex.Store({
         playListSecordNav: {},
         showMenuLeft: false,
         loading: {}, //加载中 等待
-        dataHttp: 'http://fenge2-huangwufeng.c9users.io'
+        dataHttp: 'https://fenge2-huangwufeng.c9users.io'
     },
     mutations: {
         modifyToPlay: function (state) {
