@@ -2,28 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3edd70d9-9fe2-447b-8dbb-6eb6e8f9a83d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/github_show/1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/github_show/2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/github_show/3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/github_show/4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/github_show/5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/body/Song-items.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.vue" afterPath="$PROJECT_DIR$/src/App.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/body/Classic.vue" afterPath="$PROJECT_DIR$/src/components/body/Classic.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/allPs/Home.vue" afterPath="$PROJECT_DIR$/src/allPs/Home.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/body/MenuBody.vue" afterPath="$PROJECT_DIR$/src/components/body/MenuBody.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/body/PopularList.vue" afterPath="$PROJECT_DIR$/src/components/body/PopularList.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/body/Pure.vue" afterPath="$PROJECT_DIR$/src/components/body/Pure.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/body/Radio.vue" afterPath="$PROJECT_DIR$/src/components/body/Radio.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/search/SearchHeader.vue" afterPath="$PROJECT_DIR$/src/components/search/SearchHeader.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/songs/Song.vue" afterPath="$PROJECT_DIR$/src/components/songs/Song.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/songs/carousel.vue" afterPath="$PROJECT_DIR$/src/components/songs/carousel.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.js" afterPath="$PROJECT_DIR$/src/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/body/musicList.vue" afterPath="$PROJECT_DIR$/src/components/body/musicList.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/header/startHeader.vue" afterPath="$PROJECT_DIR$/src/components/header/startHeader.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vuex-store/store.js" afterPath="$PROJECT_DIR$/vuex-store/store.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="D:\vueDir\fenge-music\src\common\lyicon\css\lyicon.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\vueDir\fenge-music\src\common\lyicon\fonts\lyicon.eot" afterPath="" />
+      <change type="DELETED" beforePath="D:\vueDir\fenge-music\src\common\lyicon\fonts\lyicon.svg" afterPath="" />
+      <change type="DELETED" beforePath="D:\vueDir\fenge-music\src\common\lyicon\fonts\lyicon.ttf" afterPath="" />
+      <change type="DELETED" beforePath="D:\vueDir\fenge-music\src\common\lyicon\fonts\lyicon.woff" afterPath="" />
+      <change type="DELETED" beforePath="D:\vueDir\fenge-music\src\common\lyicon\ie7\ie7.css" afterPath="" />
+      <change type="DELETED" beforePath="D:\vueDir\fenge-music\src\common\lyicon\ie7\ie7.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="fenge-music.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -74,11 +60,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="App.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="App.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.23076923">
+            <state vertical-scroll-proportion="-2.4179103">
               <caret line="110" column="38" selection-start-line="110" selection-start-column="38" selection-end-line="110" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dist/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.69448376">
+              <caret line="20" column="2" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -136,7 +142,6 @@
         <option value="$PROJECT_DIR$/src/components/top-menu/Ranking.vue" />
         <option value="$PROJECT_DIR$/src/components/menu-left.vue" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/common/index.css" />
         <option value="$PROJECT_DIR$/config/fine.css.js" />
         <option value="$PROJECT_DIR$/src/components/menuLeft.vue" />
@@ -162,6 +167,7 @@
         <option value="$PROJECT_DIR$/config/index.js" />
         <option value="$PROJECT_DIR$/src/components/body/PopularList.vue" />
         <option value="$PROJECT_DIR$/src/App.vue" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -173,8 +179,8 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="98" />
-    <option name="y" value="103" />
+    <option name="x" value="137" />
+    <option name="y" value="37" />
     <option name="width" value="1932" />
     <option name="height" value="1048" />
   </component>
@@ -243,7 +249,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -254,68 +260,14 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="fenge-music" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fenge-music" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fenge-music" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="body" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fenge-music" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fenge-music" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fenge-music" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fenge-music" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dist" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="github_show" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -456,10 +408,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="98" y="103" width="1932" height="1048" extended-state="1" />
-    <editor active="false" />
+    <frame x="137" y="37" width="1932" height="1048" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32681122" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32681122" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11615044" sideWeight="0.50395364" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -600,13 +552,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.68421054">
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5212355">
-          <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -832,16 +777,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.83871">
@@ -882,7 +817,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/lyicon/css/lyicon.css">
+    <entry file="file://$PROJECT_DIR$/src/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.4179103">
+          <caret line="110" column="38" selection-start-line="110" selection-start-column="38" selection-end-line="110" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -890,10 +833,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.vue">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23076923">
-          <caret line="110" column="38" selection-start-line="110" selection-start-column="38" selection-end-line="110" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.69448376">
+          <caret line="20" column="2" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
           <folding />
         </state>
       </provider>
