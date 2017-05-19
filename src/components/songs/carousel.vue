@@ -23,7 +23,7 @@
        },
        mounted: function () {
          this.$nextTick(function () {
-           this.$http.get('/api/banner').then( (val) => {
+           this.$http.get(this.$store.state.dataHttp + '/banner').then( (val) => {
              let result = val.body.banners
              this.datasArr = result
            })
@@ -36,7 +36,7 @@
     @import '../../common/stylus/mixin.styl';
     .carousel-wrapper {
         width: 100%;
-        margin:5px auto 0 auto;
+        margin:0px auto 0 auto;
         padding:0 10px 0 10px;
     }
     .el-carousel__item > span {

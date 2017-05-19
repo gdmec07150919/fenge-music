@@ -1,8 +1,8 @@
 <template>
-    <div id="menu-body-wrapper">
+    <div class="menu-body-wrapper">
          <div id="menu-body">
-            <router-link tag = "span" to="/popular" class="music-popular">流行</router-link> <!-- Nodejs网易云api: 网友精选碟 (歌单) -->
             <router-link tag = "span" to="/pure" class="music-absolute">纯音乐</router-link>
+            <router-link tag = "span" to="/popular" class="music-popular">流行</router-link> <!-- Nodejs网易云api: 网友精选碟 (歌单) -->
             <router-link tag = "span" to="/classic" class="music-allusion">古典</router-link>
             <router-link tag = "span" to="radio" class="music-radio">电台</router-link>
         </div>
@@ -30,7 +30,7 @@
 </script>
 
 <style  lang="stylus"  rel="stylesheet/stylus" >
-  #menu-body-wrapper{
+  .menu-body-wrapper{
     display: flex;
     flex-direction: column;
   }
@@ -40,8 +40,9 @@
     background: #28224e;
     color: #F7BA2A;
     font-size: 18px;
-    height:50px;
+    height:60px;
     align-items: center;
+    border-radius: 3px;
 }
 #menu-body>.router-songlist{
     flex:1;

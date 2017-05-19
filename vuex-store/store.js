@@ -7,7 +7,8 @@ export const store = new Vuex.Store({
         index: 0,
         playListSecordNav: {},
         showMenuLeft: false,
-        loading: {} //加载中 等待
+        loading: {}, //加载中 等待
+        dataHttp: 'http://fenge2-huangwufeng.c9users.io'
     },
     mutations: {
         modifyToPlay: function (state) {
@@ -25,7 +26,6 @@ export const store = new Vuex.Store({
         },
         nextSong: function (state) { //下一曲
             console.log(state.playList)
-            console.log('nnnnnn')
             if(state.playList.length-1 > state.index)
             {
                 state.index ++

@@ -1,25 +1,28 @@
 <template>
 <!-- 网友精选碟 (歌单) == 流行 -->
-    <music-list :musicListDatas="popularData"></music-list>
+    <song-items :songs="popularData"></song-items>
 </template>
 
 <script type="text/ecmascript-6">
 import BScroll from 'better-scroll'
-import MusicList from './musicList.vue'
+import SongItems from './Song-items.vue'
 export default {
     beforeCreate: function () {
-        this.$http.get('/api/search?keywords=纯音乐?limit=30').then((val) => {
-                     var arrList = []
-                       val .body.result.songs.forEach(function(item){
-                         let temp = {"coverImgUrl":item.album.picUrl,
-                                      "id":item.id,
-                                      "name":item.name}
-                         arrList.push(temp)
-                       })
-                    this.popularData=arrList
-          console.log(this.popularData)
-               },(error) => {
-                   console.log(error)
+        this.$http.get(this.$store.state.dataHttp + '/search?keywords=纯音乐?limit=30').then((val) => {
+                var restaurants = []
+                val.body.result.songs.forEach((v) => {
+                  let objSong = {
+                    'name': v.name, //歌曲名称
+                    'picUrl': v.album.picUrl,//歌手图片
+                    'popularity': v.popularity,
+                    'mp3Url': v.mp3Url,
+                    'isplaying': false
+                  }
+                  restaurants.push(objSong)
+                })
+                this.popularData=restaurants
+        },(error) => {
+          console.log(error)
         })
     },
     props: {
@@ -43,7 +46,7 @@ export default {
        }
    },
    components: {
-     musicList: MusicList
+     songItems: SongItems
    },
   mounted:  function () {
     this.$nextTick(()=> {

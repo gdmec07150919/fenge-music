@@ -52,6 +52,7 @@
     background:#20A0FF;
     color:#E5E9F2;
     font-size:36px;
+    border-radius: 3px;
     margin: 0;
   }
 .app-header-menu {

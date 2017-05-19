@@ -7,7 +7,7 @@
   import MusicList from './musicList.vue'
   export default {
     beforeCreate: function () {
-      this.$http.get('/api/top/playlist?limit=30').then((val) => {
+      this.$http.get(this.$store.state.dataHttp + '/top/playlist?limit=30').then((val) => {
         this.popularData = val.body.playlists
         console.log(this.popularData)
       },(error) => {

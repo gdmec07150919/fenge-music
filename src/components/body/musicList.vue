@@ -48,18 +48,11 @@
         },
         _loaded: function () {
           this.showLoading = false
+          this._initBScroll()
         }
       },
       created: function () {
         this.$nextTick(function () {
-          let self = this
-          for (var i = 1; i < 2; i++) {
-            setTimeout(function () {
-              if (self.musicListDatas != null) {
-                self._initBScroll()
-              }
-            }, 250 * i * i)
-          }
         })
       },
       watch: {
@@ -131,7 +124,7 @@
     position: relative;
     width: 50%;
     height:  50%;
-    margin-left: 20%;
+    margin-left: 25%;
     vertical-align: middle;
   }
   .loader-inner div{

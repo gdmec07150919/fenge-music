@@ -22,7 +22,7 @@
       return {
         mSing: Object,
         keyWord: '六月的雨',
-        url: '/api/search?keywords=',
+        url: '/search?keywords=',
         state4: '',
         SongArray: [],
         searchMoHu: Array,
@@ -31,10 +31,8 @@
     },
     methods: {
       search: function () {
-        console.log('cccc')
-        this.$http.get(this.searchUrl).then((res, req) => {
+        this.$http.get(this.$store.state.dataHttp + this.searchUrl).then((res, req) => {
           this.SongArray = res.body.result.songs
-          console.log('songArray')
           console.log(res)
           var restaurants = []
           this.SongArray.forEach((v) => {

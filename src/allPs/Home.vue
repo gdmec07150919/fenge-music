@@ -3,9 +3,9 @@
       <h-header></h-header>
       <h-carousel class="h-carousel"></h-carousel>
       <h-menuBody class="h-menu"></h-menuBody>
-      <div class="h-router-view" ref="scroll">
+  <!--    <div class="h-router-view" ref="scroll">-->
         <router-view ></router-view>
-      </div>
+<!--      </div>-->
     </div>
 </template>
 
@@ -26,13 +26,13 @@
             'h-header': header
         },
         created: function () {
-          this.$router.push('/popular')
-          let self = this
+          this.$router.push('/pure')
+         /* let self = this
           setTimeout(function() {
             self.hScroll = new BScroll(self.$refs.scroll,{
               click:true
             })
-          },2000)
+          },2000)*/
         },
       methods: {
         toD: function () {
@@ -77,7 +77,7 @@
     height:130px;
   }
   .h-menu {
-    height:50px;
+    height:60px;
   }
   .h-router-view{
     flex: 1;

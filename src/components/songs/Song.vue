@@ -20,8 +20,6 @@
 <script type="text/ecmascript-6">
 import BScroll from 'better-scroll' //使用BScroll库实现滚动效果
    export default {
-        props:{
-        },
         methods: {
              /* 下载  strRemoteURL:下载的链接地址  strLocalURL：下载之后的本地路径 */
             _downloadSong: function (strRemoteURL,strLocalURL) {

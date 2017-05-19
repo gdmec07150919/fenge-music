@@ -62,35 +62,30 @@ export default {
     '$route': function (to,from) {
       const toP = to.path.split('/')[1];
       const fromP = from.path.split('/')[1];
-      this.transitionName = toP === 'search' && fromP === 'popular' ? 'slide-left' : 'slide-right'
-      this.transitionName = (toP === 'ranking' && fromP === 'popular') || (toP === 'popular' && fromP === 'popular') ? 'slide-left' : 'slide-right'
-      switch(fromP){
-        case 'popular':
-        {
-          switch (toP) {
-            case 'search':
-            {
-              this.transitionName = 'slide-left'
-              break;
-            }
-            case 'ranking':
-            {
-              this.transitionName = 'slide-left'
-              break;
-            }
-          }
-          break;
-        }
-        default: {
+      if(toP === 'search' || fromP === 'search'){
+        //与search 之间的跳转
+        this.transitionName = toP === 'search'? 'slide-left' : fromP === 'search'? 'slide-right': 'slide-left'
+      }else if(fromP === 'ranking'){
+        //与排行榜之间的跳转
+        if( toP === 'personal' ){
+          this.transitionName = 'slide-left'
+        }else{
           this.transitionName = 'slide-right'
         }
+      }else if(fromP === 'personal'){
+          this.transitionName = 'slide-right'
+      }else if(toP==='personal'){
+        this.transitionName = 'slide-left'
+      }else{
+        //剩下的就是 home 跳转到 排行
+        this.transitionName = 'slide-left'
       }
     }
   },
   mounted: function () {
     this.$nextTick(()=>{
       //获取纯音乐 填充播放列表
-      this.$http.get('/api/search?keywords=纯音乐').then((val) => {
+      this.$http.get(this.$store.state.dataHttp + '/search?keywords=纯音乐').then((val) => {
         var restaurants = []
         val.body.result.songs.forEach((v) => {
           let objSong = {
@@ -114,7 +109,7 @@ export default {
 
 <style lang="stylus" rel="stylesheet/stylus">
 @import '../node_modules/animate.css';
-@import url('./common/stylus/mixin.styl');
+@import './common/stylus/mixin.styl';
   body,html {
     height:100%;
     border-left:1px #ccc solid;
