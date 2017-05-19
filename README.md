@@ -1,7 +1,7 @@
 # fenge-music
 
 > A Vue.js project
-项目地址:http://huangwufeng.cn
+项目地址:https://gdmec07150919.github.io
 ## Build Setup
 
 ``` bash
@@ -19,9 +19,11 @@ npm run build
 npm run build --report
 ```
 部分界面截图
-![3](static/github_show/1.png)
-![3](static/github_show/2.png)
-![3](static/github_show/3.png)
-![3](static/github_show/4.png)
-![3](static/github_show/5.png)
+
+![1](static/github_show/1.png)
+![1](static/github_show/2.png)
+![1](static/github_show/3.png)
+![1](static/github_show/4.png)
+![1](static/github_show/5.png)
+
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
